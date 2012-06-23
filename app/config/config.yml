@@ -1,0 +1,170 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+
+framework:
+    #esi:             ~
+    translator:      { fallback: %locale% }
+    secret:          %secret%
+    charset:         UTF-8
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    default_locale:  %locale%
+    session:
+        auto_start:     true
+     
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'NeutronFormBundle:Form:fields.html.twig'
+
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    bundles:        [ ]
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        #closure:
+        #    jar: %kernel.root_dir%/Resources/java/compiler.jar
+        #yui_css:
+        #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        default_connection:   default
+        connections:
+            default:
+                driver:   %database_driver%
+                host:     %database_host%
+                port:     %database_port%
+                dbname:   %database_name%
+                user:     %database_user%
+                password: %database_password%
+                charset:  UTF8
+    orm:
+        auto_generate_proxy_classes: %kernel.debug%
+        default_entity_manager: default
+        entity_managers:
+            default:
+                connection: default
+                auto_mapping: true
+                mappings:
+                    AppBundle: ~
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
+    spool:     { type: memory }
+    
+fos_user:
+    db-driver: orm
+    firewall-name: main
+    user-class: 'Neutron\UserBundle\Entity\User'
+    use_listener: false
+    service:
+        mailer: neutron_user.mailer.default
+    registration:
+        confirmation:
+            enabled:    true
+            from_email:
+                address:        registration@zend.bg
+                sender_name:    System
+    resetting:
+        form:
+            type: neutron_user_resetting
+        email:
+            from_email:
+                address:        resetting@zend.bg
+                sender_name:    System
+            template: NeutronUserBundle:Resetting:resetting.email.twig
+    profile:
+        form:
+            type:               neutron_user_profile
+            handler:            neutron_user.profile.form.handler.default
+            validation_groups:  [Profile.Edit]
+    from_email:
+        address:        noreply@zend.bg
+        sender_name:    System
+        
+# Neutron User Configuration
+neutron_user:
+    management: 
+        notification:
+            enabled: true
+         
+        
+# Neutron Assetic Configuration
+neutron_assetic:
+    dump_dir: cached_assets  
+    
+neutron_data_grid:
+    path_to_jqgrid: jquery/plugins/jqgrid
+ 
+# Neutron Form Configuration
+neutron_form: 
+    timepicker:
+        path_js: "jquery/plugins/timepicker/jquery-ui-timepicker-addon.js"
+        path_css: "jquery/plugins/timepicker/jquery-ui-timepicker-addon.css"
+    chosen:
+        path_js: "jquery/plugins/chosen/js/chosen.jquery.min.js"
+        path_css: "jquery/plugins/chosen/css/chosen.css"
+    colorpicker:
+        path_js: "jquery/plugins/colorpicker/js/colorpicker.js"
+        path_css: "jquery/plugins/colorpicker/css/colorpicker.css"
+    rating:
+        path_js: "jquery/plugins/rating/jquery.ui.stars.min.js"
+        path_css: "jquery/plugins/rating/crystal-stars.css"
+    input_limiter:
+        path_js: "jquery/plugins/jquery-inputlimiter/jquery.inputlimiter.1.2.3.min.js"
+        path_css: "jquery/plugins/jquery-inputlimiter/jquery.inputlimiter.1.0.css"
+    tinymce: 
+        tiny_mce_jquery_path_js: "jquery/plugins/tinymce/jscripts/tiny_mce/jquery.tinymce.js"
+        tiny_mce_path_js: "jquery/plugins/tinymce/jscripts/tiny_mce/tiny_mce.js"
+        ajaxfilemanager_path_php: "jquery/plugins/tinymce/jscripts/tiny_mce/plugins/ajaxfilemanager/ajaxfilemanager.php"
+        theme: advanced
+        skin: default
+        skin_variant: silver
+        width: "70%"
+        height: 300
+        filemanager: true
+        security: [ROLE_SUPER_ADMIN]
+    upload: 
+        plupload_path_js: "jquery/plugins/plupload/js/plupload.js"
+        plupload_html5_path_js: "jquery/plugins/plupload/js/plupload.html5.js"
+        plupload_flash_path_js: "jquery/plugins/plupload/js/plupload.flash.js"
+        plupload_flash_path_swf: "jquery/plugins/plupload/js/plupload.flash.swf"
+        jcrop_path_js: "jquery/plugins/jcrop/js/jquery.Jcrop.min.js"
+        jcrop_path_css: jquery/plugins/jcrop/css/jquery.Jcrop.min.css
+        colorbox_path_js: "jquery/plugins/colorbox/jquery.colorbox-min.js"
+        colorbox_path_css: "jquery/plugins/colorbox/colorbox.css"
+        max_upload_size: 4M
+        temporary_dir: "temp"
+        file_autoclear: true
+        older_than: 600
+        normalize_width: 1000
+        normalize_height: 1000
+        max_uploaded_images: 20
+        max_uploaded_files: 20
+        
+avalanche_imagine:
+    driver: imagick
+    source_root:  %kernel.root_dir%/../web
+    web_root:     %kernel.root_dir%/../web
+    cache_prefix: cache
+    filters:
+        AuthorImage_thumb:
+            type:    thumbnail
+            options: { size: [220, 90], mode: outbound, quality: 100, format: jpg }

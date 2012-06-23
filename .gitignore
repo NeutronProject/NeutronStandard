@@ -1,0 +1,30 @@
+# Zend Studio files
+.settings
+.project
+.buildpath
+nbproject
+
+# Project cache files
+web/bundles/
+web/cached_assets/*
+app/bootstrap.php.cache
+app/cache/*
+app/logs/*
+build/
+vendor/*
+src/Neutron/*
+composer.phar
+
+
+
+# PHPUnit special files
+phpunit.xml
+
+# Backup files 
+*.php~
+
+# Filesystem
+.DS_Store
+
+
+

@@ -1,0 +1,386 @@
+{% block neutron_toggle_button_row %}
+{% spaceless %}
+    <p>
+        {{ form_widget(form) }} {{ form_label(form, label|default(null)) }}
+        <span class="neutron_toggle_button" style="display:none">{{ configs|merge({'id': id})|json_encode|raw }}</span>
+        {% if configs.desc is defined %} <br/><span class="smltxt">{{ configs.desc }}</span> {% endif %}
+    </p>
+{% endspaceless %}
+{% endblock neutron_toggle_button_row %}
+
+{% block neutron_buttonset_row %}
+{% spaceless %}
+    <p {{ block('widget_container_attributes') }}>
+        {{ block('field_label') }}
+        
+        {% for child in form %}
+            {{ form_widget(child) }} {{ form_label(child) }}
+        {% endfor %}
+        {% if configs.desc is defined %} <br/><span class="smltxt">{{ configs.desc }}</span> {% endif %}
+    </p>
+    <span class="neutron_buttonset" style="display:none">{{ configs|json_encode|raw }}</span>
+    
+{% endspaceless %}
+{% endblock neutron_buttonset_row %}
+
+{% block neutron_autocomplete_row %}
+{% spaceless %}
+<p>
+    {{ form_label(form, label|default(null), {'attr': {'for' : id}}) }} 
+    {{ block('field_widget') }}
+    <span class="neutron_autocomplete" style="display:none">{{ configs|merge({'id': id})|json_encode|raw }}</span>
+</p>   
+{% endspaceless %}
+{% endblock neutron_autocomplete_row %}
+
+{% block neutron_chosen_row %}
+{% spaceless %}
+<p>
+    {{ form_label(form, label|default(null), {'attr': {'for' : id}}) }} 
+    {% set attr = {
+            "data-placeholder": empty_value,
+            "class": "chzn-select"
+        }|merge(attr) %}
+    {{ block('choice_widget') }}
+    <span class="neutron_chosen" style="display:none">{{ configs|merge({'id': id})|json_encode|raw }}</span>
+</p>
+{% endspaceless %}
+{% endblock neutron_chosen_row %}
+
+{% block neutron_colorpicker_row %}
+{% spaceless %}
+<p>
+    {{ form_label(form, label|default(null), {'attr': {'for' : id}}) }} 
+    {{ block('field_widget') }}
+    <div class="colorSelector"><div style="background-color: #ffffff;"></div></div>
+    <span class="neutron_colorpicker" style="display:none">{{ configs|merge({'id': id})|json_encode|raw }}</span>
+</p>
+{% endspaceless %}
+{% endblock neutron_colorpicker_row %}
+
+{% block neutron_rating_row %}
+{% spaceless %}
+<p>
+    {{ block('field_label') }}
+     <span>
+        {% if expanded %}
+       
+        {% for child in form %}
+            {{ form_widget(child) }} 
+        {% endfor %}
+       
+        {% else %}
+            {{ block("choice_widget") }}
+        {% endif %}
+     </span>
+    <span class="neutron_rating" style="display:none">{{ configs|json_encode|raw }}</span><br/><br/>
+</p>   
+{% endspaceless %}
+{% endblock neutron_rating_row %}
+
+{% block neutron_tinymce_row %}
+{% spaceless %}
+<p>
+   {{ block('field_label') }}
+   {{ block('textarea_widget') }}
+   <span class="neutron_tinymce" style="display:none">{{ configs|json_encode|raw }}</span>
+</p>
+{% endspaceless %}
+{% endblock neutron_tinymce_row %}
+
+{% block field_row %}
+{% spaceless %}
+    <p>
+        {{ form_label(form, label|default(null)) }}
+        {{ form_widget(form) }}
+        {% if attr['desc'] is defined %} <br/><span class="smltxt">{{ attr.desc }}</span> {% endif %}
+    </p>
+{% endspaceless %}
+{% endblock field_row %}
+
+{% block generic_label %}
+{% spaceless %}
+    {% set attr = attr|unset('desc') %}
+    {% set attr = attr|unset('class') %}
+    <label{% for attrname,attrvalue in attr %} {{attrname}}="{{attrvalue}}"{% endfor %}><span><strong>{{ label|trans({}) }}</strong></span></label>
+{% endspaceless %}
+{% endblock %}
+
+
+{# Widgets #}
+
+{% block form_widget %}
+{% spaceless %}
+    {{ block('field_rows') }}
+    {{ form_rest(form) }}
+{% endspaceless %}
+{% endblock form_widget %}
+
+{% block collection_widget %}
+{% spaceless %}
+    {% if prototype is defined %}
+        {% set attr = attr|merge({'data-prototype': form_row(prototype) }) %}
+    {% endif %}
+    {{ block('form_widget') }}
+{% endspaceless %}
+{% endblock collection_widget %}
+
+{% block textarea_widget %}
+{% spaceless %}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+{% endspaceless %}
+{% endblock textarea_widget %}
+
+{% block widget_choice_options %}
+{% spaceless %}
+    {% for choice, label in options %}
+        {% if _form_is_choice_group(label) %}
+            <optgroup label="{{ choice|trans }}">
+                {% for nestedChoice, nestedLabel in label %}
+                    <option value="{{ nestedChoice }}"{% if _form_is_choice_selected(form, nestedChoice) %} selected="selected"{% endif %}>{{ nestedLabel|trans }}</option>
+                {% endfor %}
+            </optgroup>
+        {% else %}
+            <option value="{{ choice }}"{% if _form_is_choice_selected(form, choice) %} selected="selected"{% endif %}>{{ label|trans }}</option>
+        {% endif %}
+    {% endfor %}
+{% endspaceless %}
+{% endblock widget_choice_options %}
+
+{% block choice_widget %}
+{% spaceless %}
+    {% if expanded %}
+        <p {{ block('widget_container_attributes') }}>
+        {{ block('field_label') }}
+        {% for child in form %}
+            {{ form_widget(child) }}
+            {{ form_label(child) }}
+        {% endfor %}
+        {% if attr['desc'] is defined %} <br/><span class="smltxt">{{ attr.desc }}</span> {% endif %}
+        </p>
+    {% else %}
+    <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+        {% if empty_value is not none %}
+            <option value="">{{ empty_value|trans }}</option>
+        {% endif %}
+        {% if preferred_choices|length > 0 %}
+            {% set options = preferred_choices %}
+            {{ block('widget_choice_options') }}
+            {% if choices|length > 0 and separator is not none %}
+                <option disabled="disabled">{{ separator }}</option>
+            {% endif %}
+        {% endif %}
+        {% set options = choices %}
+        {{ block('widget_choice_options') }}
+    </select>
+    {% endif %}
+{% endspaceless %}
+{% endblock choice_widget %}
+
+{% block checkbox_widget %}
+{% spaceless %}
+    <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{% endspaceless %}
+{% endblock checkbox_widget %}
+
+{% block radio_widget %}
+{% spaceless %}
+    <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+{% endspaceless %}
+{% endblock radio_widget %}
+
+{% block datetime_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    {% else %}
+        <p>
+            <span> {{ form_label(form, label|default(null)) }}</span>
+            {{ form_widget(form.date) }}
+            {{ form_widget(form.time) }}
+        </p>
+    {% endif %}
+{% endspaceless %}
+{% endblock datetime_widget %}
+
+{% block date_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    {% else %}
+        <div {{ block('widget_container_attributes') }}>
+            {{ date_pattern|replace({
+                '{{ year }}':  form_widget(form.year),
+                '{{ month }}': form_widget(form.month),
+                '{{ day }}':   form_widget(form.day),
+            })|raw }}
+        </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock date_widget %}
+
+{% block time_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    {% else %}
+        <div {{ block('widget_container_attributes') }}>
+            {{ form_widget(form.hour, { 'attr': { 'size': '1' } }) }}:{{ form_widget(form.minute, { 'attr': { 'size': '1' } }) }}{% if with_seconds %}:{{ form_widget(form.second, { 'attr': { 'size': '1' } }) }}{% endif %}
+        </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock time_widget %}
+
+{% block number_widget %}
+{% spaceless %}
+    {# type="number" doesn't work with floats #}
+    {% set type = type|default('text') %}
+    {{ block('field_widget') }}
+{% endspaceless %}
+{% endblock number_widget %}
+
+{% block integer_widget %}
+{% spaceless %}
+    {% set type = type|default('number') %}
+    {{ block('field_widget') }}
+{% endspaceless %}
+{% endblock integer_widget %}
+
+{% block money_widget %}
+{% spaceless %}
+    {{ money_pattern|replace({ '{{ widget }}': block('field_widget') })|raw }}
+{% endspaceless %}
+{% endblock money_widget %}
+
+{% block url_widget %}
+{% spaceless %}
+    {% set type = type|default('url') %}
+    {{ block('field_widget') }}
+{% endspaceless %}
+{% endblock url_widget %}
+
+{% block search_widget %}
+{% spaceless %}
+    {% set type = type|default('search') %}
+    {{ block('field_widget') }}
+{% endspaceless %}
+{% endblock search_widget %}
+
+{% block percent_widget %}
+{% spaceless %}
+    {% set type = type|default('text') %}
+    {{ block('field_widget') }} %
+{% endspaceless %}
+{% endblock percent_widget %}
+
+{% block field_widget %}
+{% spaceless %}
+    {% set type = type|default('text') %}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{% endspaceless %}
+{% endblock field_widget %}
+
+{% block password_widget %}
+{% spaceless %}
+    {% set type = type|default('password') %}
+    {{ block('field_widget') }}
+{% endspaceless %}
+{% endblock password_widget %}
+
+{% block hidden_widget %}
+    {% set type = type|default('hidden') %}
+    {{ block('field_widget') }}
+{% endblock hidden_widget %}
+
+{% block email_widget %}
+{% spaceless %}
+    {% set type = type|default('email') %}
+    {{ block('field_widget') }}
+{% endspaceless %}
+{% endblock email_widget %}
+
+{# Labels #}
+
+{% block field_label %}
+{% spaceless %}
+    {% set attr = attr|merge({'for': id}) %}
+    {{ block('generic_label') }}
+{% endspaceless %}
+{% endblock field_label %}
+
+{% block form_label %}
+{% spaceless %}
+    {{ block('generic_label') }}
+{% endspaceless %}
+{% endblock form_label %}
+
+{# Rows #}
+
+{% block repeated_row %}
+{% spaceless %}
+    {{ block('field_rows') }}
+{% endspaceless %}
+{% endblock repeated_row %}
+
+
+{% block hidden_row %}
+    {{ form_widget(form) }}
+{% endblock hidden_row %}
+
+{# Misc #}
+
+{% block field_enctype %}
+{% spaceless %}
+    {% if multipart %}enctype="multipart/form-data"{% endif %}
+{% endspaceless %}
+{% endblock field_enctype %}
+
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+    <ul>
+        {% for error in errors %}
+            <li>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+{% block field_rest %}
+{% spaceless %}
+    {% for child in form %}
+        {% if not child.rendered %}
+            {{ form_row(child) }}
+        {% endif %}
+    {% endfor %}
+{% endspaceless %}
+{% endblock field_rest %}
+
+{# Support #}
+
+{% block field_rows %}
+{% spaceless %}
+    {{ form_errors(form) }}
+    {% for child in form %}
+        {{ form_row(child) }}
+    {% endfor %}
+{% endspaceless %}
+{% endblock field_rows %}
+
+{% block widget_attributes %}
+{% spaceless %}
+    id="{{ id }}" name="{{ full_name }}"{% if read_only %} disabled="disabled"{% endif %}{% if required %} required="required"{% endif %}{% if max_length %} maxlength="{{ max_length }}"{% endif %}{% if pattern %} pattern="{{ pattern }}"{% endif %}
+    {% for attrname,attrvalue in attr %}{{attrname}}="{{attrvalue}}" {% endfor %}
+{% endspaceless %}
+{% endblock widget_attributes %}
+
+{% block widget_container_attributes %}
+{% spaceless %}
+    id="{{ id }}"
+    {% for attrname,attrvalue in attr %}{{attrname}}="{{attrvalue}}" {% endfor %}
+{% endspaceless %}
+{% endblock widget_container_attributes %}
+
+
+

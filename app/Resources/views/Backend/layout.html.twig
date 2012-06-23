@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Backend{% endblock %}</title>
+        {% block stylesheets %}
+			{{ neutron_prepend_stylesheet('files/styles.css') }}
+			{{ neutron_prepend_stylesheet('jquery/css/redmond/jquery-ui-1.8.17.custom.css') }}
+
+			{{ neutron_stylesheet_render() }}
+
+        {% endblock %}
+
+
+	</head>
+    <body>
+		<div id="page">
+			<div id="top">
+				<a href="#">{{ app.request.getHost() }} <small>(Neutron BETA 1)</small></a>
+
+				<ul id="navigation">
+					<li>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle')|raw }}</strong>! <span class="divider">&mdash;</span></li>
+					<li class="dropdown"><a href="account.html">Administration
+							<span class="caret"></span>
+					</a>
+						<ul class="menu">
+							<li><a href="{{ path('fos_user_profile_show') }}">Show your profile</a></li>
+							<li><a href="{{ path('fos_user_profile_edit') }}">Edit your profile</a></li>
+							<li class="divider"></li>
+							<li><a href="{{ path('fos_user_security_logout') }}">
+                   				{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                			</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<div id="panel">
+				<h1 class="icon dashboard">
+					{% block headDesc %}Dashboard
+						<small>Lorem ipsum dolor sit amet, consecteturadipiscing elit.</small>
+					{% endblock %}
+				</h1>
+
+				<ul id="menu">
+					<li><a href="dashboard.html">Dashboard</a></li>
+					<li><a href="grid.html">Grid</a></li>
+					<li><a href="messages.html">Messages <small>10</small></a></li>
+					<li><a href="forms.html">Forms</a></li>
+					<li><a href="tables.html">Tables</a></li>
+					<li class="active"><a href="typo.html">Typo</a></li>
+					<li><a href="charts.html">Charts</a></li>
+					<li class="dropdown"><a href="typo.html#">Micro-pages <span
+							class="caret"></span></a>
+						<ul class="menu">
+							<li class="divider heading">User section</li>
+							<li><a href="index.html">Login page</a></li>
+							<li><a href="forgot.html">Forgot password page</a></li>
+							<li class="divider heading">Error pages</li>
+							<li><a href="error.html">404 error page</a></li>
+						</ul></li>
+				</ul>
+			</div>
+
+			<ul id="breadcrumbs">
+				<li><a href="{{ app.request.getBaseUrl() }}">{{ app.request.getHost() }}</a> <span class="divider">/</span></li>
+				<li class="dropdown current"><a href="dashboard.html">Dashboard
+						<span class="caret"></span>
+				</a>
+					<ul class="menu">
+						<li class="divider heading">Dashboard</li>
+						<li><a href="dashboard.html#">Example menu link</a></li>
+					</ul>
+			  	</li>
+			</ul>
+
+			<div id="container">{% block body %}{% endblock %}</div>
+		</div>
+
+        {% block footer %}
+			<footer>
+				<p>
+					&copy; 2012 by <a href="index.html">{{ app.request.getHost() }}</a> &bull; <a
+						href="#">Neutron</a>
+				</p>
+			</footer>
+        {% endblock %}
+
+
+		{% block javascripts %}
+
+			{{ neutron_prepend_javascript('jquery/i18n/jquery-ui-i18n.js') }}
+            {{ neutron_prepend_javascript('jquery/js/jquery-ui-1.8.17.custom.min.js') }}
+            {{ neutron_prepend_javascript('jquery/js/jquery.js') }}
+            {{ neutron_append_javascript('files/scripts.js') }}
+
+			{{ neutron_javascript_render() }}
+
+			<!--[if lt IE 9]><script src="{{ neutron_base_url() }}files/assets/html5shiv.js"></script><![endif]-->
+
+		{% endblock %}
+
+    </body>
+</html>
