@@ -32,6 +32,8 @@ class AppKernel extends Kernel
             new Neutron\AdminBundle\NeutronAdminBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
             new Neutron\ComponentBundle\NeutronComponentBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Neutron\TreeBundle\NeutronTreeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

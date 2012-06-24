@@ -1,3 +1,7 @@
+NeutronTreeBundle:
+    resource: "@NeutronTreeBundle/Resources/config/routing.xml"
+    prefix:   /
+
 NeutronComponentBundle:
     resource: "@NeutronComponentBundle/Resources/config/routing.xml"
     prefix:   /

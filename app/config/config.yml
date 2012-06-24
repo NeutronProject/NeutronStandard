@@ -60,7 +60,19 @@ doctrine:
                 auto_mapping: true
                 mappings:
                     AppBundle: ~
+                    NeutronTreeBundle: ~
+                    gedmo_tree:
+                        type: annotation
+                        prefix: Gedmo\Tree\Entity
+                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
+                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
 
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            tree: true
+        
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%
@@ -168,3 +180,6 @@ avalanche_imagine:
         AuthorImage_thumb:
             type:    thumbnail
             options: { size: [220, 90], mode: outbound, quality: 100, format: jpg }
+            
+neutron_tree:
+    path_to_jstree: jquery/plugins/jstree
