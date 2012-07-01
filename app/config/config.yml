@@ -60,7 +60,7 @@ doctrine:
                 auto_mapping: true
                 mappings:
                     AppBundle: ~
-                    NeutronTreeBundle: ~
+                    NeutronAdminBundle: ~
                     gedmo_tree:
                         type: annotation
                         prefix: Gedmo\Tree\Entity
