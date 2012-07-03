@@ -7,7 +7,7 @@ NeutronComponentBundle:
     prefix:   /
 
 NeutronAdminBundle:
-    resource: "@NeutronAdminBundle/Resources/config/routing.yml"
+    resource: "@NeutronAdminBundle/Resources/config/routing.xml"
     prefix:   /admin
 
 NeutronUserBundle:
