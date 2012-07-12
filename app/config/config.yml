@@ -182,4 +182,6 @@ avalanche_imagine:
             options: { size: [220, 90], mode: outbound, quality: 100, format: jpg }
             
 neutron_tree:
-    path_to_jstree: jquery/plugins/jstree
+    resources: 
+        path_to_jstree: jquery/plugins/jstree
+        path_to_jquery_cookie_js: jquery/plugins/cookie/jquery.cookie.js

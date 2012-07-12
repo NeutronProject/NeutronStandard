@@ -8,8 +8,8 @@
         <default key="_controller">AppBundle:Frontend\Default:index</default>
     </route>
     
-    <route id="test" pattern="/test">
-        <default key="_controller">AppBundle:Frontend\Default:test</default>
+    <route id="dashboard" pattern="/admin">
+        <default key="_controller">AppBundle:Backend\Default:index</default>
     </route>
    
     
