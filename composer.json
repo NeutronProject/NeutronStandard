@@ -5,8 +5,8 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony": "2.1.*",
+      "php": ">=5.3.3",
+		"symfony/symfony": "2.1.*",
         "doctrine/orm": "2.2.*",
         "doctrine/doctrine-bundle": "dev-master",
         "twig/extensions": "dev-master",
@@ -20,12 +20,9 @@
         "jms/di-extra-bundle": "1.0.*",
         "jms/translation-bundle": "dev-master",
         "stof/doctrine-extensions-bundle":"dev-master",
-        "neutron/neutron-assetic-bundle": "dev-master",
-        "neutron/neutron-datagrid-bundle": "dev-master",
-        "neutron/neutron-form-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "dev-master",
-        "knplabs/knp-paginator-bundle": "*",
-        "friendsofsymfony/user-bundle": "*",
+        "knplabs/knp-paginator-bundle": "dev-master",
+        "friendsofsymfony/user-bundle": "dev-master",
         "friendsofsymfony/jsrouting-bundle": "dev-master",
         "imagine/Imagine": "dev-master",
         "avalanche123/imagine-bundle": "dev-master"
@@ -35,17 +32,20 @@
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
     "config": {
         "bin-dir": "bin"
     },
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web"

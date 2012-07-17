@@ -1,8 +1,6 @@
 <?php
-
-use Neutron\Bundle\AsseticBundle\NeutronAsseticBundle;
-
 use Symfony\Component\HttpKernel\Kernel;
+
 use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
@@ -21,19 +19,20 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-        	new NeutronAsseticBundle(),
-            new AppBundle\AppBundle(),
-            new Neutron\UserBundle\NeutronUserBundle(),
-            new Neutron\Bundle\DataGridBundle\NeutronDataGridBundle(),
-            new Neutron\Bundle\FormBundle\NeutronFormBundle(),
         	new FOS\UserBundle\FOSUserBundle(),
         	new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Neutron\AdminBundle\NeutronAdminBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
-            new Neutron\ComponentBundle\NeutronComponentBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new AppBundle\AppBundle(),
+            new Neutron\Bundle\AsseticBundle\NeutronAsseticBundle(),
+            new Neutron\UserBundle\NeutronUserBundle(),
+            new Neutron\Bundle\DataGridBundle\NeutronDataGridBundle(),
+            new Neutron\Bundle\FormBundle\NeutronFormBundle(),
+            new Neutron\AdminBundle\NeutronAdminBundle(),
             new Neutron\TreeBundle\NeutronTreeBundle(),
+            new Neutron\ComponentBundle\NeutronComponentBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
