@@ -68,6 +68,7 @@ stof_doctrine_extensions:
     orm:
         default:
             tree: true
+            sluggable: true
         
 # Swiftmailer Configuration
 swiftmailer:
