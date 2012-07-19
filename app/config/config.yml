@@ -57,18 +57,16 @@ doctrine:
                 mappings:
                     AppBundle: ~
                     NeutronAdminBundle: ~
-                    gedmo_tree:
-                        type: annotation
-                        prefix: Gedmo\Tree\Entity
-                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
-                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
 
 stof_doctrine_extensions:
-    default_locale: en_US
+    default_locale: %locale%
+    translation_fallback: true
+    persist_default_translation: true
     orm:
         default:
             tree: true
             sluggable: true
+            translatable: true
         
 # Swiftmailer Configuration
 swiftmailer:
@@ -107,7 +105,14 @@ fos_user:
     from_email:
         address:        noreply@zend.bg
         sender_name:    System
-        
+ 
+ 
+#Neutron Admin Configuration
+neutron_admin:
+    languages:
+        en: English     
+        de: German     
+        bg: Bulgarian 
 # Neutron User Configuration
 neutron_user:
     management: 
@@ -182,3 +187,14 @@ neutron_tree:
     resources: 
         path_to_jstree: jquery/plugins/jstree
         path_to_jquery_cookie_js: jquery/plugins/cookie/jquery.cookie.js
+        
+        
+jms_translation:
+    configs:
+        Application:
+            dirs: [%kernel.root_dir%, %kernel.root_dir%/../src]
+            output_dir: %kernel.root_dir%/Resources/translations
+            ignored_domains: [routes]
+            excluded_names: [*TestCase.php, *Test.php]
+            excluded_dirs: [cache, data, logs, Tests]
+

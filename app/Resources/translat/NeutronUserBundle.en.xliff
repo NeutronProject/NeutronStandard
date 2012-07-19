@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2012-07-19T19:32:44Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.0.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0" resname="-----">
+        <jms:reference-file line="44">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="54">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>-----</source>
+        <target state="new">-----</target>
+      </trans-unit>
+      <trans-unit id="1" resname="form.email">
+        <jms:reference-file line="18">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="9">views/Management/delete_content.html.twig</jms:reference-file>
+        <source>form.email</source>
+        <target state="new">form.email</target>
+      </trans-unit>
+      <trans-unit id="2" resname="form.enabled">
+        <jms:reference-file line="28">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.enabled</source>
+        <target state="new">form.enabled</target>
+      </trans-unit>
+      <trans-unit id="3" resname="form.expired">
+        <jms:reference-file line="38">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.expired</source>
+        <target state="new">form.expired</target>
+      </trans-unit>
+      <trans-unit id="4" resname="form.expired_at">
+        <jms:reference-file line="43">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.expired_at</source>
+        <target state="new">form.expired_at</target>
+      </trans-unit>
+      <trans-unit id="5" resname="form.last_login">
+        <jms:reference-file line="48">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.last_login</source>
+        <target state="new">form.last_login</target>
+      </trans-unit>
+      <trans-unit id="6" resname="form.locked">
+        <jms:reference-file line="33">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.locked</source>
+        <target state="new">form.locked</target>
+      </trans-unit>
+      <trans-unit id="7" resname="form.message.invalid">
+        <jms:reference-file line="34">views/Form/form-tabs.html.twig</jms:reference-file>
+        <jms:reference-file line="36">views/Category/create.html.twig</jms:reference-file>
+        <source>form.message.invalid</source>
+        <target state="new">form.message.invalid</target>
+      </trans-unit>
+      <trans-unit id="8" resname="form.password">
+        <jms:reference-file line="9">Management/Mail/edit-user-email.html.twig</jms:reference-file>
+        <jms:reference-file line="8">Management/Mail/add-user-email.html.twig</jms:reference-file>
+        <source>form.password</source>
+        <target state="new">form.password</target>
+      </trans-unit>
+      <trans-unit id="9" resname="form.password_requested_at">
+        <jms:reference-file line="53">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.password_requested_at</source>
+        <target state="new">form.password_requested_at</target>
+      </trans-unit>
+      <trans-unit id="10" resname="form.role">
+        <jms:reference-file line="23">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>form.role</source>
+        <target state="new">form.role</target>
+      </trans-unit>
+      <trans-unit id="11" resname="form.user">
+        <jms:reference-file line="13">views/Profile/show_content.html.twig</jms:reference-file>
+        <jms:reference-file line="4">views/Management/delete_content.html.twig</jms:reference-file>
+        <source>form.user</source>
+        <target state="new">form.user</target>
+      </trans-unit>
+      <trans-unit id="12" resname="form.username">
+        <jms:reference-file line="7">Management/Mail/edit-user-email.html.twig</jms:reference-file>
+        <jms:reference-file line="7">Management/Mail/add-user-email.html.twig</jms:reference-file>
+        <jms:reference-file line="7">Management/Mail/delete-user-email.html.twig</jms:reference-file>
+        <source>form.username</source>
+        <target state="new">form.username</target>
+      </trans-unit>
+      <trans-unit id="13" resname="grid.user_management.disable_users">
+        <jms:reference-file line="138">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.disable_users</source>
+        <target state="new">grid.user_management.disable_users</target>
+      </trans-unit>
+      <trans-unit id="14" resname="grid.user_management.email">
+        <jms:reference-file line="53">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.email</source>
+        <target state="new">grid.user_management.email</target>
+      </trans-unit>
+      <trans-unit id="15" resname="grid.user_management.enable_users">
+        <jms:reference-file line="137">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.enable_users</source>
+        <target state="new">grid.user_management.enable_users</target>
+      </trans-unit>
+      <trans-unit id="16" resname="grid.user_management.enabled">
+        <jms:reference-file line="55">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.enabled</source>
+        <target state="new">grid.user_management.enabled</target>
+      </trans-unit>
+      <trans-unit id="17" resname="grid.user_management.expired">
+        <jms:reference-file line="57">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.expired</source>
+        <target state="new">grid.user_management.expired</target>
+      </trans-unit>
+      <trans-unit id="18" resname="grid.user_management.lock_users">
+        <jms:reference-file line="139">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.lock_users</source>
+        <target state="new">grid.user_management.lock_users</target>
+      </trans-unit>
+      <trans-unit id="19" resname="grid.user_management.locked">
+        <jms:reference-file line="56">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.locked</source>
+        <target state="new">grid.user_management.locked</target>
+      </trans-unit>
+      <trans-unit id="20" resname="grid.user_management.role">
+        <jms:reference-file line="54">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.role</source>
+        <target state="new">grid.user_management.role</target>
+      </trans-unit>
+      <trans-unit id="21" resname="grid.user_management.title">
+        <jms:reference-file line="46">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.title</source>
+        <target state="new">grid.user_management.title</target>
+      </trans-unit>
+      <trans-unit id="22" resname="grid.user_management.unlock_users">
+        <jms:reference-file line="140">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.unlock_users</source>
+        <target state="new">grid.user_management.unlock_users</target>
+      </trans-unit>
+      <trans-unit id="23" resname="grid.user_management.username">
+        <jms:reference-file line="52">UserBundle/DataGrid/UserManagement.php</jms:reference-file>
+        <source>grid.user_management.username</source>
+        <target state="new">grid.user_management.username</target>
+      </trans-unit>
+      <trans-unit id="24" resname="head_title">
+        <jms:reference-file line="3">views/Profile/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Profile/show.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Management/add.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Management/delete.html.twig</jms:reference-file>
+        <jms:reference-file line="3">views/Management/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Management/index.html.twig</jms:reference-file>
+        <source>head_title</source>
+        <target state="new">head_title</target>
+      </trans-unit>
+      <trans-unit id="25" resname="header.profile.edit">
+        <jms:reference-file line="7">views/Profile/edit.html.twig</jms:reference-file>
+        <source>header.profile.edit</source>
+        <target state="new">header.profile.edit</target>
+      </trans-unit>
+      <trans-unit id="26" resname="header.profile.show">
+        <jms:reference-file line="6">views/Profile/show.html.twig</jms:reference-file>
+        <source>header.profile.show</source>
+        <target state="new">header.profile.show</target>
+      </trans-unit>
+      <trans-unit id="27" resname="header.sub_user_management">
+        <jms:reference-file line="23">views/Management/index.html.twig</jms:reference-file>
+        <source>header.sub_user_management</source>
+        <target state="new">header.sub_user_management</target>
+      </trans-unit>
+      <trans-unit id="28" resname="header.sub_user_management.delete">
+        <jms:reference-file line="16">views/Management/delete.html.twig</jms:reference-file>
+        <source>header.sub_user_management.delete</source>
+        <target state="new">header.sub_user_management.delete</target>
+      </trans-unit>
+      <trans-unit id="29" resname="header.sub_user_management_add">
+        <jms:reference-file line="16">views/Management/add.html.twig</jms:reference-file>
+        <source>header.sub_user_management_add</source>
+        <target state="new">header.sub_user_management_add</target>
+      </trans-unit>
+      <trans-unit id="30" resname="header.sub_user_management_update">
+        <jms:reference-file line="16">views/Management/edit.html.twig</jms:reference-file>
+        <source>header.sub_user_management_update</source>
+        <target state="new">header.sub_user_management_update</target>
+      </trans-unit>
+      <trans-unit id="31" resname="header.user_management">
+        <jms:reference-file line="7">views/Management/add.html.twig</jms:reference-file>
+        <jms:reference-file line="7">views/Management/edit.html.twig</jms:reference-file>
+        <jms:reference-file line="14">views/Management/index.html.twig</jms:reference-file>
+        <source>header.user_management</source>
+        <target state="new">header.user_management</target>
+      </trans-unit>
+      <trans-unit id="32" resname="header.user_management.delete">
+        <jms:reference-file line="7">views/Management/delete.html.twig</jms:reference-file>
+        <source>header.user_management.delete</source>
+        <target state="new">header.user_management.delete</target>
+      </trans-unit>
+      <trans-unit id="33" resname="layout.logged_in_as">
+        <jms:reference-file line="42">Resources/views/layout.html.twig</jms:reference-file>
+        <source>layout.logged_in_as</source>
+        <target state="new">layout.logged_in_as</target>
+      </trans-unit>
+      <trans-unit id="34" resname="login_url">
+        <jms:reference-file line="10">Management/Mail/add-user-email.html.twig</jms:reference-file>
+        <source>login_url</source>
+        <target state="new">login_url</target>
+      </trans-unit>
+      <trans-unit id="35" resname="management.add_user.mail.subject">
+        <jms:reference-file line="1">Management/Mail/add-user-email.html.twig</jms:reference-file>
+        <source>management.add_user.mail.subject</source>
+        <target state="new">management.add_user.mail.subject</target>
+      </trans-unit>
+      <trans-unit id="36" resname="management.add_user.mail.text">
+        <jms:reference-file line="5">Management/Mail/add-user-email.html.twig</jms:reference-file>
+        <source>management.add_user.mail.text</source>
+        <target state="new">management.add_user.mail.text</target>
+      </trans-unit>
+      <trans-unit id="37" resname="management.delete_user.mail.subject">
+        <jms:reference-file line="1">Management/Mail/delete-user-email.html.twig</jms:reference-file>
+        <source>management.delete_user.mail.subject</source>
+        <target state="new">management.delete_user.mail.subject</target>
+      </trans-unit>
+      <trans-unit id="38" resname="management.delete_user.mail.text">
+        <jms:reference-file line="5">Management/Mail/delete-user-email.html.twig</jms:reference-file>
+        <source>management.delete_user.mail.text</source>
+        <target state="new">management.delete_user.mail.text</target>
+      </trans-unit>
+      <trans-unit id="39" resname="management.edit_user.mail.subject">
+        <jms:reference-file line="1">Management/Mail/edit-user-email.html.twig</jms:reference-file>
+        <source>management.edit_user.mail.subject</source>
+        <target state="new">management.edit_user.mail.subject</target>
+      </trans-unit>
+      <trans-unit id="40" resname="management.edit_user.mail.text">
+        <jms:reference-file line="5">Management/Mail/edit-user-email.html.twig</jms:reference-file>
+        <source>management.edit_user.mail.text</source>
+        <target state="new">management.edit_user.mail.text</target>
+      </trans-unit>
+      <trans-unit id="41" resname="management.message.mass_action.disable_users">
+        <jms:reference-file line="9">views/Management/prototypes.html.twig</jms:reference-file>
+        <source>management.message.mass_action.disable_users</source>
+        <target state="new">management.message.mass_action.disable_users</target>
+      </trans-unit>
+      <trans-unit id="42" resname="management.message.mass_action.enable_users">
+        <jms:reference-file line="3">views/Management/prototypes.html.twig</jms:reference-file>
+        <source>management.message.mass_action.enable_users</source>
+        <target state="new">management.message.mass_action.enable_users</target>
+      </trans-unit>
+      <trans-unit id="43" resname="management.message.mass_action.lock_users">
+        <jms:reference-file line="15">views/Management/prototypes.html.twig</jms:reference-file>
+        <source>management.message.mass_action.lock_users</source>
+        <target state="new">management.message.mass_action.lock_users</target>
+      </trans-unit>
+      <trans-unit id="44" resname="management.message.mass_action.unlock_users">
+        <jms:reference-file line="21">views/Management/prototypes.html.twig</jms:reference-file>
+        <source>management.message.mass_action.unlock_users</source>
+        <target state="new">management.message.mass_action.unlock_users</target>
+      </trans-unit>
+      <trans-unit id="45" resname="neutron_user.management.back">
+        <jms:reference-file line="22">views/Management/delete_content.html.twig</jms:reference-file>
+        <source>neutron_user.management.back</source>
+        <target state="new">neutron_user.management.back</target>
+      </trans-unit>
+      <trans-unit id="46" resname="neutron_user.management.delete">
+        <jms:reference-file line="21">views/Management/delete_content.html.twig</jms:reference-file>
+        <source>neutron_user.management.delete</source>
+        <target state="new">neutron_user.management.delete</target>
+      </trans-unit>
+      <trans-unit id="47" resname="neutron_user.profile.edit">
+        <jms:reference-file line="64">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>neutron_user.profile.edit</source>
+        <target state="new">neutron_user.profile.edit</target>
+      </trans-unit>
+      <trans-unit id="48" resname="no_data">
+        <jms:reference-file line="49">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>no_data</source>
+        <target state="new">no_data</target>
+      </trans-unit>
+      <trans-unit id="49" resname="profile.general_info">
+        <jms:reference-file line="8">views/Profile/show_content.html.twig</jms:reference-file>
+        <source>profile.general_info</source>
+        <target state="new">profile.general_info</target>
+      </trans-unit>
+      <trans-unit id="50" resname="resetting.request.back_to_login">
+        <jms:reference-file line="36">views/Resetting/reset_content.html.twig</jms:reference-file>
+        <jms:reference-file line="37">views/Resetting/reset_content.html.twig</jms:reference-file>
+        <jms:reference-file line="5">views/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="6">views/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="10">views/Resetting/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="11">views/Resetting/checkEmail.html.twig</jms:reference-file>
+        <jms:reference-file line="32">views/Resetting/request_content.html.twig</jms:reference-file>
+        <jms:reference-file line="33">views/Resetting/request_content.html.twig</jms:reference-file>
+        <source>resetting.request.back_to_login</source>
+        <target state="new">resetting.request.back_to_login</target>
+      </trans-unit>
+      <trans-unit id="51" resname="security.login.forgotten_password">
+        <jms:reference-file line="43">views/Security/login.html.twig</jms:reference-file>
+        <source>security.login.forgotten_password</source>
+        <target state="new">security.login.forgotten_password</target>
+      </trans-unit>
+      <trans-unit id="52" resname="sub_header.profile.edit">
+        <jms:reference-file line="16">views/Profile/edit.html.twig</jms:reference-file>
+        <source>sub_header.profile.edit</source>
+        <target state="new">sub_header.profile.edit</target>
+      </trans-unit>
+      <trans-unit id="53" resname="sub_header.profile.show">
+        <jms:reference-file line="14">views/Profile/show.html.twig</jms:reference-file>
+        <source>sub_header.profile.show</source>
+        <target state="new">sub_header.profile.show</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

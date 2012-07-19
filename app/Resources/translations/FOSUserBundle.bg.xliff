@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2012-07-19T23:39:03Z" source-language="en" target-language="bg" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.0.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0" resname="change_password.submit">
+        <jms:reference-file line="6">views/ChangePassword/changePassword_content.html.twig</jms:reference-file>
+        <source>change_password.submit</source>
+        <target>change_password.submit</target>
+      </trans-unit>
+      <trans-unit id="1" resname="layout.logged_in_as">
+        <jms:reference-file line="22">views/Backend/layout.html.twig</jms:reference-file>
+        <source>layout.logged_in_as</source>
+        <target>layout.logged_in_as</target>
+      </trans-unit>
+      <trans-unit id="2" resname="layout.logout">
+        <jms:reference-file line="31">views/Backend/layout.html.twig</jms:reference-file>
+        <source>layout.logout</source>
+        <target>layout.logout</target>
+      </trans-unit>
+      <trans-unit id="3" resname="resetting.check_email">
+        <jms:reference-file line="8">views/Resetting/checkEmail.html.twig</jms:reference-file>
+        <source>resetting.check_email</source>
+        <target>resetting.check_email</target>
+      </trans-unit>
+      <trans-unit id="4" resname="resetting.password_already_requested">
+        <jms:reference-file line="4">views/Resetting/passwordAlreadyRequested.html.twig</jms:reference-file>
+        <jms:reference-file line="52">UserBundle/Controller/ResettingController.php</jms:reference-file>
+        <source>resetting.password_already_requested</source>
+        <target state="new">resetting.password_already_requested</target>
+      </trans-unit>
+      <trans-unit id="5" resname="resetting.request.invalid_username">
+        <jms:reference-file line="6">views/Resetting/request_content.html.twig</jms:reference-file>
+        <jms:reference-file line="45">UserBundle/Controller/ResettingController.php</jms:reference-file>
+        <source>resetting.request.invalid_username</source>
+        <target state="new">resetting.request.invalid_username</target>
+      </trans-unit>
+      <trans-unit id="6" resname="resetting.request.submit">
+        <jms:reference-file line="44">views/Resetting/request_content.html.twig</jms:reference-file>
+        <source>resetting.request.submit</source>
+        <target state="new">resetting.request.submit</target>
+      </trans-unit>
+      <trans-unit id="7" resname="resetting.request.username">
+        <jms:reference-file line="26">views/Resetting/request_content.html.twig</jms:reference-file>
+        <source>resetting.request.username</source>
+        <target state="new">resetting.request.username</target>
+      </trans-unit>
+      <trans-unit id="8" resname="resetting.reset.submit">
+        <jms:reference-file line="44">views/Resetting/reset_content.html.twig</jms:reference-file>
+        <source>resetting.reset.submit</source>
+        <target state="new">resetting.reset.submit</target>
+      </trans-unit>
+      <trans-unit id="9" resname="security.login.password">
+        <jms:reference-file line="38">views/Security/login.html.twig</jms:reference-file>
+        <source>security.login.password</source>
+        <target state="new">security.login.password</target>
+      </trans-unit>
+      <trans-unit id="10" resname="security.login.submit">
+        <jms:reference-file line="52">views/Security/login.html.twig</jms:reference-file>
+        <source>security.login.submit</source>
+        <target state="new">security.login.submit</target>
+      </trans-unit>
+      <trans-unit id="11" resname="security.login.username">
+        <jms:reference-file line="32">views/Security/login.html.twig</jms:reference-file>
+        <source>security.login.username</source>
+        <target state="new">security.login.username</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

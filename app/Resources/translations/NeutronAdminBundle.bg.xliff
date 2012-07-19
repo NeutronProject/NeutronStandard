@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2012-07-19T21:41:34Z" source-language="en" target-language="bg" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.0.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0" resname="form.displayed">
+        <jms:reference-file line="36">views/Category/delete.html.twig</jms:reference-file>
+        <source>form.displayed</source>
+        <target state="new">form.displayed</target>
+      </trans-unit>
+      <trans-unit id="1" resname="form.enabled">
+        <jms:reference-file line="31">views/Category/delete.html.twig</jms:reference-file>
+        <source>form.enabled</source>
+        <target state="new">form.enabled</target>
+      </trans-unit>
+      <trans-unit id="2" resname="form.external">
+        <jms:reference-file line="16">views/Category/delete.html.twig</jms:reference-file>
+        <source>form.external</source>
+        <target state="new">form.external</target>
+      </trans-unit>
+      <trans-unit id="3" resname="form.slug">
+        <jms:reference-file line="21">views/Category/delete.html.twig</jms:reference-file>
+        <source>form.slug</source>
+        <target state="new">form.slug</target>
+      </trans-unit>
+      <trans-unit id="4" resname="form.title">
+        <jms:reference-file line="11">views/Category/delete.html.twig</jms:reference-file>
+        <source>form.title</source>
+        <target state="new">form.title</target>
+      </trans-unit>
+      <trans-unit id="5" resname="form.type">
+        <jms:reference-file line="26">views/Category/delete.html.twig</jms:reference-file>
+        <source>form.type</source>
+        <target state="new">form.type</target>
+      </trans-unit>
+      <trans-unit id="6" resname="layout.app_language">
+        <jms:reference-file line="1">Extension/ApplicationLanguage/language_status.html.twig</jms:reference-file>
+        <source>layout.app_language</source>
+        <target>layout.app_language</target>
+      </trans-unit>
+      <trans-unit id="7" resname="neutron_admin.category.delete">
+        <jms:reference-file line="48">views/Category/delete.html.twig</jms:reference-file>
+        <source>neutron_admin.category.delete</source>
+        <target state="new">neutron_admin.category.delete</target>
+      </trans-unit>
+      <trans-unit id="8" resname="neutron_admin.category.management.back">
+        <jms:reference-file line="50">views/Category/delete.html.twig</jms:reference-file>
+        <source>neutron_admin.category.management.back</source>
+        <target state="new">neutron_admin.category.management.back</target>
+      </trans-unit>
+      <trans-unit id="9" resname="neutron_admin.category.remove">
+        <jms:reference-file line="49">views/Category/delete.html.twig</jms:reference-file>
+        <source>neutron_admin.category.remove</source>
+        <target state="new">neutron_admin.category.remove</target>
+      </trans-unit>
+      <trans-unit id="10" resname="tree.btn.create">
+        <jms:reference-file line="43">AdminBundle/Tree/Main.php</jms:reference-file>
+        <source>tree.btn.create</source>
+        <target state="new">tree.btn.create</target>
+      </trans-unit>
+      <trans-unit id="11" resname="tree.btn.delete">
+        <jms:reference-file line="53">AdminBundle/Tree/Main.php</jms:reference-file>
+        <source>tree.btn.delete</source>
+        <target state="new">tree.btn.delete</target>
+      </trans-unit>
+      <trans-unit id="12" resname="tree.btn.update">
+        <jms:reference-file line="48">AdminBundle/Tree/Main.php</jms:reference-file>
+        <source>tree.btn.update</source>
+        <target state="new">tree.btn.update</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

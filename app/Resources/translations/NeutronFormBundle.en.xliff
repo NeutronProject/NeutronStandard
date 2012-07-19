@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2012-07-19T20:42:19Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.0.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0" resname="neutron_file_upload.button_active_title">
+        <jms:reference-file line="132">Form/Type/FileUploadType.php</jms:reference-file>
+        <source>neutron_file_upload.button_active_title</source>
+        <target state="new">neutron_file_upload.button_active_title</target>
+      </trans-unit>
+      <trans-unit id="1" resname="neutron_file_upload.button_inactive_title">
+        <jms:reference-file line="134">Form/Type/FileUploadType.php</jms:reference-file>
+        <source>neutron_file_upload.button_inactive_title</source>
+        <target state="new">neutron_file_upload.button_inactive_title</target>
+      </trans-unit>
+      <trans-unit id="2" resname="neutron_input_limiter.limitText">
+        <jms:reference-file line="78">Form/Type/InputLimiterType.php</jms:reference-file>
+        <source>neutron_input_limiter.limitText</source>
+        <target state="new">neutron_input_limiter.limitText</target>
+      </trans-unit>
+      <trans-unit id="3" resname="neutron_input_limiter.remFullText">
+        <jms:reference-file line="76">Form/Type/InputLimiterType.php</jms:reference-file>
+        <source>neutron_input_limiter.remFullText</source>
+        <target state="new">neutron_input_limiter.remFullText</target>
+      </trans-unit>
+      <trans-unit id="4" resname="neutron_input_limiter.remText">
+        <jms:reference-file line="74">Form/Type/InputLimiterType.php</jms:reference-file>
+        <source>neutron_input_limiter.remText</source>
+        <target state="new">neutron_input_limiter.remText</target>
+      </trans-unit>
+      <trans-unit id="5" resname="neutron_upload.button_active_title">
+        <jms:reference-file line="140">Form/Type/MultiFileUploadCollectionType.php</jms:reference-file>
+        <jms:reference-file line="151">Form/Type/MultiImageUploadCollectionType.php</jms:reference-file>
+        <jms:reference-file line="146">Form/Type/ImageUploadType.php</jms:reference-file>
+        <source>neutron_upload.button_active_title</source>
+        <target state="new">neutron_upload.button_active_title</target>
+      </trans-unit>
+      <trans-unit id="6" resname="neutron_upload.button_crop_title">
+        <jms:reference-file line="299">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="472">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_crop_title</source>
+        <target state="new">neutron_upload.button_crop_title</target>
+      </trans-unit>
+      <trans-unit id="7" resname="neutron_upload.button_edit_meta_title">
+        <jms:reference-file line="301">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="474">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="604">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="768">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_edit_meta_title</source>
+        <target state="new">neutron_upload.button_edit_meta_title</target>
+      </trans-unit>
+      <trans-unit id="8" resname="neutron_upload.button_inactive_title">
+        <jms:reference-file line="142">Form/Type/MultiFileUploadCollectionType.php</jms:reference-file>
+        <jms:reference-file line="153">Form/Type/MultiImageUploadCollectionType.php</jms:reference-file>
+        <jms:reference-file line="148">Form/Type/ImageUploadType.php</jms:reference-file>
+        <source>neutron_upload.button_inactive_title</source>
+        <target state="new">neutron_upload.button_inactive_title</target>
+      </trans-unit>
+      <trans-unit id="9" resname="neutron_upload.button_remove_title">
+        <jms:reference-file line="307">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="480">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="606">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="770">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_remove_title</source>
+        <target state="new">neutron_upload.button_remove_title</target>
+      </trans-unit>
+      <trans-unit id="10" resname="neutron_upload.button_reset_title">
+        <jms:reference-file line="305">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="478">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_reset_title</source>
+        <target state="new">neutron_upload.button_reset_title</target>
+      </trans-unit>
+      <trans-unit id="11" resname="neutron_upload.button_rotate_title">
+        <jms:reference-file line="303">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="476">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_rotate_title</source>
+        <target state="new">neutron_upload.button_rotate_title</target>
+      </trans-unit>
+      <trans-unit id="12" resname="neutron_upload.button_upload_title">
+        <jms:reference-file line="292">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="463">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="599">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="763">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_upload_title</source>
+        <target state="new">neutron_upload.button_upload_title</target>
+      </trans-unit>
+      <trans-unit id="13" resname="neutron_upload.button_view_title">
+        <jms:reference-file line="297">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="469">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.button_view_title</source>
+        <target state="new">neutron_upload.button_view_title</target>
+      </trans-unit>
+      <trans-unit id="14" resname="neutron_upload.control_info">
+        <jms:reference-file line="483">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="773">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.control_info</source>
+        <target state="new">neutron_upload.control_info</target>
+      </trans-unit>
+      <trans-unit id="15" resname="neutron_upload.dialog_crop_button_cancel">
+        <jms:reference-file line="331">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_crop_button_cancel</source>
+        <target state="new">neutron_upload.dialog_crop_button_cancel</target>
+      </trans-unit>
+      <trans-unit id="16" resname="neutron_upload.dialog_crop_button_crop">
+        <jms:reference-file line="329">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_crop_button_crop</source>
+        <target state="new">neutron_upload.dialog_crop_button_crop</target>
+      </trans-unit>
+      <trans-unit id="17" resname="neutron_upload.dialog_crop_title">
+        <jms:reference-file line="319">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_crop_title</source>
+        <target state="new">neutron_upload.dialog_crop_title</target>
+      </trans-unit>
+      <trans-unit id="18" resname="neutron_upload.dialog_edit_meta_button_done">
+        <jms:reference-file line="364">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="515">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="642">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="805">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_edit_meta_button_done</source>
+        <target state="new">neutron_upload.dialog_edit_meta_button_done</target>
+      </trans-unit>
+      <trans-unit id="19" resname="neutron_upload.dialog_edit_meta_label_caption">
+        <jms:reference-file line="350">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="501">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="628">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="791">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_edit_meta_label_caption</source>
+        <target state="new">neutron_upload.dialog_edit_meta_label_caption</target>
+      </trans-unit>
+      <trans-unit id="20" resname="neutron_upload.dialog_edit_meta_label_description">
+        <jms:reference-file line="357">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="508">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="635">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="798">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_edit_meta_label_description</source>
+        <target state="new">neutron_upload.dialog_edit_meta_label_description</target>
+      </trans-unit>
+      <trans-unit id="21" resname="neutron_upload.dialog_edit_meta_label_title">
+        <jms:reference-file line="343">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="494">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="621">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="784">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_edit_meta_label_title</source>
+        <target state="new">neutron_upload.dialog_edit_meta_label_title</target>
+      </trans-unit>
+      <trans-unit id="22" resname="neutron_upload.dialog_edit_meta_title">
+        <jms:reference-file line="340">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="491">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="618">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="781">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.dialog_edit_meta_title</source>
+        <target state="new">neutron_upload.dialog_edit_meta_title</target>
+      </trans-unit>
+      <trans-unit id="23" resname="neutron_upload.drag_drop_text">
+        <jms:reference-file line="399">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="676">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.drag_drop_text</source>
+        <target state="new">neutron_upload.drag_drop_text</target>
+      </trans-unit>
+      <trans-unit id="24" resname="neutron_upload.filename">
+        <jms:reference-file line="587">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="691">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="709">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.filename</source>
+        <target state="new">neutron_upload.filename</target>
+      </trans-unit>
+      <trans-unit id="25" resname="neutron_upload.filesize">
+        <jms:reference-file line="592">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="696">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="714">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.filesize</source>
+        <target state="new">neutron_upload.filesize</target>
+      </trans-unit>
+      <trans-unit id="26" resname="neutron_upload.max_uploaded_files_error">
+        <jms:reference-file line="135">Form/Type/MultiFileUploadCollectionType.php</jms:reference-file>
+        <source>neutron_upload.max_uploaded_files_error</source>
+        <target state="new">neutron_upload.max_uploaded_files_error</target>
+      </trans-unit>
+      <trans-unit id="27" resname="neutron_upload.max_uploaded_images_error">
+        <jms:reference-file line="129">Form/Type/MultiImageUploadCollectionType.php</jms:reference-file>
+        <source>neutron_upload.max_uploaded_images_error</source>
+        <target state="new">neutron_upload.max_uploaded_images_error</target>
+      </trans-unit>
+      <trans-unit id="28" resname="neutron_upload.no_file_text">
+        <jms:reference-file line="677">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.no_file_text</source>
+        <target state="new">neutron_upload.no_file_text</target>
+      </trans-unit>
+      <trans-unit id="29" resname="neutron_upload.no_file_uploaded">
+        <jms:reference-file line="583">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.no_file_uploaded</source>
+        <target state="new">neutron_upload.no_file_uploaded</target>
+      </trans-unit>
+      <trans-unit id="30" resname="neutron_upload.no_files_text">
+        <jms:reference-file line="400">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.no_files_text</source>
+        <target state="new">neutron_upload.no_files_text</target>
+      </trans-unit>
+      <trans-unit id="31" resname="neutron_upload.upload_progress">
+        <jms:reference-file line="279">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="429">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="573">views/Form/fields.html.twig</jms:reference-file>
+        <jms:reference-file line="731">views/Form/fields.html.twig</jms:reference-file>
+        <source>neutron_upload.upload_progress</source>
+        <target>Upload progress</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

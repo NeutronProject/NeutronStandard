@@ -48,7 +48,13 @@ fos_js_routing:
     
 DataGridBundle:
     resource: "@NeutronDataGridBundle/Resources/config/routing.yml"
-    prefix:   /     
+    prefix:   /   
+    
+JMSTranslationBundle_ui:
+    resource: @JMSTranslationBundle/Controller/
+    type:     annotation
+    prefix:   /admin/translation
+ 
 # Internal routing configuration to handle ESI
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

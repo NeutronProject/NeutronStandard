@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
+  <file date="2012-07-19T21:42:18Z" source-language="en" target-language="de" datatype="plaintext" original="not.available">
+    <header>
+      <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.0.0-DEV"/>
+      <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
+    </header>
+    <body>
+      <trans-unit id="0" resname="externalUri.blank">
+        <source>externalUri.blank</source>
+        <target state="new">externalUri.blank</target>
+      </trans-unit>
+      <trans-unit id="1" resname="externalUri.url.invalid">
+        <source>externalUri.url.invalid</source>
+        <target state="new">externalUri.url.invalid</target>
+      </trans-unit>
+      <trans-unit id="2" resname="fos_user.email.already_used">
+        <source>fos_user.email.already_used</source>
+        <target state="new">fos_user.email.already_used</target>
+      </trans-unit>
+      <trans-unit id="3" resname="fos_user.email.blank">
+        <source>fos_user.email.blank</source>
+        <target state="new">fos_user.email.blank</target>
+      </trans-unit>
+      <trans-unit id="4" resname="fos_user.email.invalid">
+        <source>fos_user.email.invalid</source>
+        <target state="new">fos_user.email.invalid</target>
+      </trans-unit>
+      <trans-unit id="5" resname="fos_user.email.long">
+        <source>fos_user.email.long</source>
+        <target state="new">fos_user.email.long</target>
+      </trans-unit>
+      <trans-unit id="6" resname="fos_user.email.short">
+        <source>fos_user.email.short</source>
+        <target state="new">fos_user.email.short</target>
+      </trans-unit>
+      <trans-unit id="7" resname="fos_user.password.blank">
+        <source>fos_user.password.blank</source>
+        <target state="new">fos_user.password.blank</target>
+      </trans-unit>
+      <trans-unit id="8" resname="fos_user.password.short">
+        <source>fos_user.password.short</source>
+        <target state="new">fos_user.password.short</target>
+      </trans-unit>
+      <trans-unit id="9" resname="fos_user.username.already_used">
+        <source>fos_user.username.already_used</source>
+        <target state="new">fos_user.username.already_used</target>
+      </trans-unit>
+      <trans-unit id="10" resname="fos_user.username.blank">
+        <source>fos_user.username.blank</source>
+        <target state="new">fos_user.username.blank</target>
+      </trans-unit>
+      <trans-unit id="11" resname="fos_user.username.long">
+        <source>fos_user.username.long</source>
+        <target state="new">fos_user.username.long</target>
+      </trans-unit>
+      <trans-unit id="12" resname="fos_user.username.short">
+        <source>fos_user.username.short</source>
+        <target state="new">fos_user.username.short</target>
+      </trans-unit>
+      <trans-unit id="13" resname="neutron_user.email.already_used">
+        <source>neutron_user.email.already_used</source>
+        <target state="new">neutron_user.email.already_used</target>
+      </trans-unit>
+      <trans-unit id="14" resname="neutron_user.username.already_used">
+        <source>neutron_user.username.already_used</source>
+        <target state="new">neutron_user.username.already_used</target>
+      </trans-unit>
+      <trans-unit id="15" resname="slug.already_used">
+        <source>slug.already_used</source>
+        <target state="new">slug.already_used</target>
+      </trans-unit>
+      <trans-unit id="16" resname="slug.long">
+        <source>slug.long</source>
+        <target state="new">slug.long</target>
+      </trans-unit>
+      <trans-unit id="17" resname="slug.short">
+        <source>slug.short</source>
+        <target state="new">slug.short</target>
+      </trans-unit>
+      <trans-unit id="18" resname="title.already_used">
+        <source>title.already_used</source>
+        <target state="new">title.already_used</target>
+      </trans-unit>
+      <trans-unit id="19" resname="title.blank">
+        <source>title.blank</source>
+        <target state="new">title.blank</target>
+      </trans-unit>
+      <trans-unit id="20" resname="title.long">
+        <source>title.long</source>
+        <target state="new">title.long</target>
+      </trans-unit>
+      <trans-unit id="21" resname="title.short">
+        <source>title.short</source>
+        <target state="new">title.short</target>
+      </trans-unit>
+      <trans-unit id="22" resname="type.blank">
+        <source>type.blank</source>
+        <target state="new">type.blank</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

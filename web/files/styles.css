@@ -874,3 +874,23 @@ footer a {
 .form label {
 	font-size: 11px;
 }
+
+.btn {
+background: -webkit-linear-gradient(top, #E7E7E7 0%, #D0D0D0 100%);
+background: -moz-linear-gradient(top, #E7E7E7 0%, #D0D0D0 100%);
+background: -ms-linear-gradient(top, #E7E7E7 0%, #D0D0D0 100%);
+background: -o-linear-gradient(top, #E7E7E7 0%, #D0D0D0 100%);
+background: linear-gradient(top, #E7E7E7 0%, #D0D0D0 100%);
+box-shadow: 0px 1px rgba(0, 0, 0, 0.1), inset 0px 1px white, inset 0px -1px 5px rgba(180, 180, 180, 0.4);
+-webkit-border-radius: 3px;
+
+
+text-shadow: 0px 1px rgba(255, 255, 255, 0.7);
+border: 1px solid #999;
+display: inline-block;
+font-weight: bold;
+padding: 7px 8px;
+cursor: pointer;
+font-size: 8pt;
+color: #333;
+}
