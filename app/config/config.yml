@@ -80,7 +80,9 @@ fos_user:
     db-driver: orm
     firewall-name: main
     user-class: 'Neutron\UserBundle\Entity\User'
-    use_listener: false
+    group:
+        group_class: Neutron\UserBundle\Entity\Group
+    use_listener: true
     service:
         mailer: neutron_user.mailer.default
     registration:
@@ -135,6 +137,8 @@ neutron_form:
     chosen:
         path_js: "jquery/plugins/chosen/js/chosen.jquery.min.js"
         path_css: "jquery/plugins/chosen/css/chosen.css"
+    select:
+        path: "jquery/plugins/select"
     colorpicker:
         path_js: "jquery/plugins/colorpicker/js/colorpicker.js"
         path_css: "jquery/plugins/colorpicker/css/colorpicker.css"
