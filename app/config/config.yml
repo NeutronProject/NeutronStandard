@@ -120,6 +120,10 @@ neutron_user:
     management: 
         notification:
             enabled: true
+    group:
+        group_class: Neutron\UserBundle\Entity\Group
+    role:
+        role_class: Neutron\UserBundle\Entity\Role
          
         
 # Neutron Assetic Configuration
