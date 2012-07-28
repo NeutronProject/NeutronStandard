@@ -52,3 +52,6 @@ security:
      
     acl:
         connection: default
+        
+    access_decision_manager:
+        strategy: unanimous
