@@ -9,6 +9,8 @@
  */
 namespace AppBundle\Controller\Backend;
 
+use Neutron\ComponentBundle\Doctrine\ORM\Query\TreeWalker\AclWalker;
+
 use Symfony\Component\Security\Core\SecurityContext;
 
 use Symfony\Component\Security\Acl\Permission\MaskBuilder;
@@ -32,13 +34,13 @@ class DefaultController extends Controller
 
     public function indexAction()
     {        
-        $this->test();
+        //$this->test();
     	return $this->render('AppBundle:Backend\Default:index.html.twig',array());
     }
     
     protected function test()
     {
-        $securityContext = $this->get('security.context');
+        /* $securityContext = $this->get('security.context');
         
         
         $tree = $this->get('neutron.tree')
@@ -48,57 +50,24 @@ class DefaultController extends Controller
         
         $node = $manager->findNodeBy(array('id' => 71));
         
-        var_dump($securityContext->isGranted('UNDELETE', $node)); die;
+        var_dump($securityContext->isGranted('UNDELETE', $node)); */
         
-     
+        $em = $this->getDoctrine()->getEntityManager();
+        $dql = $em->createQuery('SELECT t FROM NeutronAdminBundle:MainTree t');
+
+        $dql->setHint(
+            \Doctrine\ORM\Query::HINT_CUSTOM_OUTPUT_WALKER, 
+            'Neutron\\ComponentBundle\\Doctrine\\ORM\\Query\\TreeWalker\\AclWalker'
+        );
         
-        /* var_dump($this->_getEntitiesIdsMatchingRoleMaskSql(
-           'Neutron\AdminBundle\Entity\MainTree', array('ROLE_SUPER_ADMIN'), MaskBuilder::MASK_DELETE)
-        ); */
+        $dql->setHint(AclWalker::HINT_ACL_OPTIONS, 
+                array('roles' => array('ROLE_BLOCK_USER'), 'mask' => MaskBuilder::MASK_VIEW));
+        
+         var_dump($dql->getArrayResult());
+        
         
         
        die;
-        
-    }
-    
-
-    
-    private function _getEntitiesIdsMatchingRoleMaskSql($className, array $roles, $requiredMask)
-    {
-            $rolesSql = array();
-            foreach($roles as $role) {
-                $rolesSql[] = 's.identifier = "' . $role . '"';
-            }
-            $rolesSql =  '(' . implode(' OR ', $rolesSql) . ')';
-        
-            $sql = "
-            SELECT
-                oid.object_identifier
-            FROM
-                acl_entries e
-            INNER JOIN
-                acl_object_identities oid ON (
-                oid.class_id = e.class_id
-            )
-            INNER JOIN acl_security_identities s ON (
-                s.id = e.security_identity_id
-            )
-            INNER JOIN acl_classes class ON (
-                class.id = e.class_id
-            )
-            WHERE
-                
-                (e.mask & %d) AND
-                $rolesSql AND
-                class.class_type = '%s'
-           GROUP BY
-                oid.object_identifier";
-        
-        return sprintf(
-            $sql,
-            $requiredMask,
-            $className
-        );
         
     }
 

@@ -112,9 +112,15 @@ fos_user:
 #Neutron Admin Configuration
 neutron_admin:
     languages:
-        en: English     
-        de: German     
-        bg: Bulgarian 
+        backend:
+            en: English     
+            de: German     
+            bg: Bulgarian 
+        frontend:
+            en: English     
+            nl: Dutch
+ 
+
 # Neutron User Configuration
 neutron_user:
     management: 
