@@ -1,3 +1,7 @@
+NeutronPageBundle:
+    resource: "@NeutronPageBundle/Resources/config/routing.xml"
+    prefix:   /
+
 NeutronTreeBundle:
     resource: "@NeutronTreeBundle/Resources/config/routing.xml"
     prefix:   /
@@ -48,7 +52,11 @@ fos_js_routing:
     
 DataGridBundle:
     resource: "@NeutronDataGridBundle/Resources/config/routing.yml"
-    prefix:   /   
+    prefix:   /  
+
+NeutronFormBundle:
+    resource: "@NeutronFormBundle/Resources/config/routing.yml"
+    prefix:   /
     
 JMSTranslationBundle_ui:
     resource: @JMSTranslationBundle/Controller/

@@ -9,6 +9,8 @@
  */
 namespace AppBundle\Controller\Frontend;
 
+use Neutron\ComponentBundle\Util\Filter\SlugFilter;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -21,16 +23,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     public function indexAction()
-    {
+    {   $this->test();
         return $this->render(
             'AppBundle:Frontend\Default:index.html.twig',
             array()
         );
     }
     
-    public function testAction()
+    public function test()
     {
-        die('test');
-  
+        
     }
 }

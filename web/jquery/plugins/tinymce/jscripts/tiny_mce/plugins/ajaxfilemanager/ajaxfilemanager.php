@@ -1,4 +1,11 @@
-<?php
+<?php   
+ini_set('session.save_path', '../../../../../../../../app/cache/dev/sessions');
+session_start();
+if(!isset($_SESSION['_sf2_attributes']["authorized"]))
+{die('You are not authorized!');}
+?>
+<?php 
+
 	/**
 	 * file manager platform
 	 * @author Logan Cai (cailongqun [at] yahoo [dot] com [dot] cn)

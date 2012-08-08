@@ -1,7 +1,3 @@
-<?php   
-	if(!isset($_SESSION['_symfony2']['attributes']['authorized']) || $_SESSION['_symfony2']['attributes']['authorized'] !== true)
-	{die('You are not authorized!');}
-?>
 <?php
 	/**
 	 * sysem base config setting
@@ -53,8 +49,8 @@ error_reporting(E_ALL);
 			these two paths accept relative path only, don't use absolute path
 		*/
 		
-	define('CONFIG_SYS_DEFAULT_PATH', '../../../../../../../uploaded'); //accept relative path only
-	define('CONFIG_SYS_ROOT_PATH', '../../../../../../../uploaded');	//accept relative path only
+	define('CONFIG_SYS_DEFAULT_PATH', '../../../../../../../media/filemanager'); //accept relative path only
+	define('CONFIG_SYS_ROOT_PATH', '../../../../../../../media/filemanager');	//accept relative path only
 	define('CONFIG_SYS_FOLDER_SHOWN_ON_TOP', true); //show your folders on the top of list if true or order by name 
 	define("CONFIG_SYS_DIR_SESSION_PATH", 'session/');
 	define("CONFIG_SYS_PATTERN_FORMAT", 'list'); //three options: reg ,csv, list, this option define the parttern format for the following patterns

@@ -6,14 +6,14 @@ nbproject
 
 # Project cache files
 web/bundles/
+web/cached_assets/*
 app/bootstrap.php.cache
 app/cache/*
 app/logs/*
 build/
-vendor
-bin
-composer.phar
+vendor/*
 src/Neutron/*
+composer.phar
 
 
 
@@ -25,8 +25,6 @@ phpunit.xml
 
 # Filesystem
 .DS_Store
-
-
 
 
 

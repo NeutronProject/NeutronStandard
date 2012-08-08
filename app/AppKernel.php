@@ -33,7 +33,7 @@ class AppKernel extends Kernel
             new Neutron\AdminBundle\NeutronAdminBundle(),
             new Neutron\TreeBundle\NeutronTreeBundle(),
             new Neutron\ComponentBundle\NeutronComponentBundle(),
-            
+            new Neutron\PageBundle\NeutronPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

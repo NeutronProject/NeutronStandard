@@ -1,4 +1,5 @@
 parameters:
+    site_url: http://neutron-project.local/
     database_driver:   pdo_mysql
     database_host:     localhost
     database_port:     ~

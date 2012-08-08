@@ -6,19 +6,25 @@ framework:
     #esi:             ~
     translator:      { fallback: %locale% }
     secret:          %secret%
-    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: %kernel.debug%
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
-    session: ~
+    trust_proxy_headers: false
+    session: 
+        lifetime: 0
      
 
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    globals:
+        site_url: %site_url%
 
 
 # Assetic Configuration
@@ -50,6 +56,8 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         default_entity_manager: default
+        resolve_target_entities:
+            Neutron\TreeBundle\Model\TreeNodeInterface: Neutron\AdminBundle\Entity\MainTree
         entity_managers:
             default:
                 connection: default
@@ -202,7 +210,9 @@ neutron_tree:
         path_to_jstree: jquery/plugins/jstree
         path_to_jquery_cookie_js: jquery/plugins/cookie/jquery.cookie.js
         
-        
+neutron_page: ~
+
+  
 jms_translation:
     configs:
         Application:

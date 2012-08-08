@@ -9,6 +9,8 @@
  */
 namespace AppBundle\Controller\Backend;
 
+use Neutron\ComponentBundle\Util\Filter\SlugFilter;
+
 use Neutron\ComponentBundle\Doctrine\ORM\Query\TreeWalker\AclWalker;
 
 use Symfony\Component\Security\Core\SecurityContext;
@@ -33,8 +35,8 @@ class DefaultController extends Controller
 {
 
     public function indexAction()
-    {        
-        //$this->test();
+    {      
+
     	return $this->render('AppBundle:Backend\Default:index.html.twig',array());
     }
     
