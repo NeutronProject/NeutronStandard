@@ -1,5 +1,5 @@
-NeutronContactWidgetBundle:
-    resource: "@NeutronContactWidgetBundle/Resources/config/routing.xml"
+NeutronContactBundle:
+    resource: "@NeutronContactBundle/Resources/config/routing.xml"
     prefix:   /
 
 NeutronLayoutBundle:
