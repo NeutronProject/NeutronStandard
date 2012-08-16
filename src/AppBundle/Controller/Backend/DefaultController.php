@@ -9,6 +9,10 @@
  */
 namespace AppBundle\Controller\Backend;
 
+use Neutron\PluginBundle\Provider\WidgetProvider;
+
+use Neutron\PluginBundle\Provider\PluginProvider;
+
 use Neutron\ComponentBundle\Util\Filter\SlugFilter;
 
 use Neutron\ComponentBundle\Doctrine\ORM\Query\TreeWalker\AclWalker;
@@ -35,8 +39,7 @@ class DefaultController extends Controller
 {
 
     public function indexAction()
-    {      
-
+    {    
     	return $this->render('AppBundle:Backend\Default:index.html.twig',array());
     }
     

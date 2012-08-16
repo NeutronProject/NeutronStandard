@@ -9,8 +9,6 @@
  */
 namespace AppBundle\Controller\Frontend;
 
-use Neutron\ComponentBundle\Util\Filter\SlugFilter;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -32,6 +30,6 @@ class DefaultController extends Controller
     
     public function test()
     {
-        
+
     }
 }

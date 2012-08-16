@@ -1,3 +1,11 @@
+NeutronContactWidgetBundle:
+    resource: "@NeutronContactWidgetBundle/Resources/config/routing.xml"
+    prefix:   /
+
+NeutronLayoutBundle:
+    resource: "@NeutronLayoutBundle/Resources/config/routing.xml"
+    prefix:   /
+
 NeutronPageBundle:
     resource: "@NeutronPageBundle/Resources/config/routing.xml"
     prefix:   /

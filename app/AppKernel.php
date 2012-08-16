@@ -20,9 +20,9 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\TranslationBundle\JMSTranslationBundle(),
-        	new FOS\UserBundle\FOSUserBundle(),
-        	new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-        	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new AppBundle\AppBundle(),
@@ -34,6 +34,8 @@ class AppKernel extends Kernel
             new Neutron\TreeBundle\NeutronTreeBundle(),
             new Neutron\ComponentBundle\NeutronComponentBundle(),
             new Neutron\PageBundle\NeutronPageBundle(),
+            new Neutron\LayoutBundle\NeutronLayoutBundle(),
+            new Neutron\ContactWidgetBundle\NeutronContactWidgetBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

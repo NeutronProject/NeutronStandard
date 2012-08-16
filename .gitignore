@@ -6,6 +6,9 @@ nbproject
 
 # Project cache files
 web/bundles/
+web/media/*
+web/temp/*
+web/cached_assets/*
 app/bootstrap.php.cache
 app/cache/*
 app/logs/*
