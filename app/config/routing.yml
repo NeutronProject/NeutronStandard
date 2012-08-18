@@ -1,3 +1,7 @@
+NeutronSeoBundle:
+    resource: "@NeutronSeoBundle/Resources/config/routing.xml"
+    prefix:   /
+
 NeutronContactBundle:
     resource: "@NeutronContactBundle/Resources/config/routing.xml"
     prefix:   /

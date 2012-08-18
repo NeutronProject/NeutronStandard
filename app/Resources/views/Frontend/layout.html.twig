@@ -2,7 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Backend{% endblock %}</title>
+        <title>{% block meta_title %}{{ neutron_seo_title() }}{% endblock %}</title>
+        <meta name="Keywords" content="{% block meta_keywords %}{{ neutron_seo_keywords() }}{% endblock %}" />
+        <meta name="Description" content="{% block meta_description %}{{ neutron_seo_description() }}{% endblock %}" />
+
         {% block stylesheets %}
 
         {% endblock %}

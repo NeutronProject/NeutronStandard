@@ -210,7 +210,11 @@ neutron_tree:
         path_to_jstree: jquery/plugins/jstree
         path_to_jquery_cookie_js: jquery/plugins/cookie/jquery.cookie.js
         
-neutron_page: ~
+neutron_page: 
+    enable: true
+    
+neutron_contact:
+    enable: true
 
   
 jms_translation:

@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new Neutron\Plugin\PageBundle\NeutronPageBundle(),
             new Neutron\LayoutBundle\NeutronLayoutBundle(),
             new Neutron\Widget\ContactBundle\NeutronContactBundle(),
+            new Neutron\SeoBundle\NeutronSeoBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

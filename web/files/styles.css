@@ -834,6 +834,7 @@ footer a {
 }
 
 .textarea {
+	width: 500px;
 	min-height: 80px;
 }
 
