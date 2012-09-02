@@ -25,6 +25,7 @@ security:
 
         main:
             pattern: ^/
+            access_denied_handler: neutron_user.security.on_access_denied_handler
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider

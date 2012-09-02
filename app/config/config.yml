@@ -58,6 +58,7 @@ doctrine:
         default_entity_manager: default
         resolve_target_entities:
             Neutron\TreeBundle\Model\TreeNodeInterface: Neutron\AdminBundle\Entity\MainTree
+            Neutron\Plugin\PageBundle\Model\PageInterface: AppBundle\Entity\Page
         entity_managers:
             default:
                 connection: default
@@ -127,6 +128,7 @@ neutron_admin:
         frontend:
             en: English     
             nl: Dutch
+            bg: Български
  
 
 # Neutron User Configuration
@@ -212,10 +214,22 @@ neutron_tree:
         
 neutron_page: 
     enable: true
+    page_class: "AppBundle\\Entity\\Page"
+    form:
+        type: "app_form_page"
+    templates:
+        "::Theme\\Sterling\\Template\\right_sidebar.html.twig": "template.right_sidebar"
     
 neutron_contact:
+    enable: false
+    
+neutron_page_block:
     enable: true
-
+    
+neutron_block_text:
+    enable: true
+    is_html: false
+    use_acl: false
   
 jms_translation:
     configs:
@@ -225,4 +239,18 @@ jms_translation:
             ignored_domains: [routes]
             excluded_names: [*TestCase.php, *Test.php]
             excluded_dirs: [cache, data, logs, Tests]
+            
+jms_i18n_routing:
+    default_locale: %locale%
+    locales: [en, nl, bg]
+    strategy: prefix_except_default
 
+avalanche_imagine:
+    driver: imagick
+    source_root:  %kernel.root_dir%/../web
+    web_root:     %kernel.root_dir%/../web
+    cache_prefix: cache
+    filters:
+        PageImage_thumb:
+            type:    thumbnail
+            options: { size: [620, 161], mode: outbound, quality: 80 }

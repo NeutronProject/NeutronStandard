@@ -1,5 +1,9 @@
 imports:
     - { resource: config.yml }
+    
+framework:
+    router:
+        strict_requirements: null
 
 #doctrine:
 #    orm:

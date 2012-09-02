@@ -1,17 +1,17 @@
+neutron_block_text:
+    resource: "@NeutronBlockTextBundle/Resources/config/routing.xml"
+    prefix:   /admin/widget/block-text
+
+NeutronPageBlockBundle:
+    resource: "@NeutronPageBlockBundle/Resources/config/routing.xml"
+    prefix:   /admin/widget/page-block
+
 NeutronSeoBundle:
     resource: "@NeutronSeoBundle/Resources/config/routing.xml"
     prefix:   /
 
 NeutronContactBundle:
     resource: "@NeutronContactBundle/Resources/config/routing.xml"
-    prefix:   /
-
-NeutronLayoutBundle:
-    resource: "@NeutronLayoutBundle/Resources/config/routing.xml"
-    prefix:   /
-
-NeutronPageBundle:
-    resource: "@NeutronPageBundle/Resources/config/routing.xml"
     prefix:   /
 
 NeutronTreeBundle:
@@ -59,9 +59,6 @@ fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
     prefix: /admin/group
     
-fos_js_routing:
-    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
-    
 DataGridBundle:
     resource: "@NeutronDataGridBundle/Resources/config/routing.yml"
     prefix:   /  
@@ -74,6 +71,18 @@ JMSTranslationBundle_ui:
     resource: @JMSTranslationBundle/Controller/
     type:     annotation
     prefix:   /admin/translation
+    
+_imagine:
+    resource: .
+    type:     imagine
+    
+NeutronPageBundle:
+    resource: "@NeutronPageBundle/Resources/config/routing.xml"
+    prefix:   /
+    
+NeutronLayoutBundle:
+    resource: "@NeutronLayoutBundle/Resources/config/routing.xml"
+    prefix:   /
  
 # Internal routing configuration to handle ESI
 #_internal:

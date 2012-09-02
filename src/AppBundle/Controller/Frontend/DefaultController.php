@@ -9,6 +9,8 @@
  */
 namespace AppBundle\Controller\Frontend;
 
+use Symfony\Component\HttpFoundation\Request;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
@@ -21,15 +23,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     public function indexAction()
-    {   $this->test();
+    {   
         return $this->render(
             'AppBundle:Frontend\Default:index.html.twig',
             array()
         );
-    }
-    
-    public function test()
-    {
-
     }
 }
