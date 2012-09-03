@@ -46,8 +46,14 @@
         {
             "package": "gedmo/doctrine-extensions",
             "version": "dev-master",
-            "source-reference": "8fa580a58e73550b3f729e420d078784b154013f",
-            "commit-date": "1346185701"
+            "alias-pretty-version": "2.3.x-dev",
+            "alias-version": "2.3.9999999.9999999-dev"
+        },
+        {
+            "package": "gedmo/doctrine-extensions",
+            "version": "dev-master",
+            "source-reference": "4e8a3a920eedaba4e76c26a92347e9b47bb7ffdf",
+            "commit-date": "1346486653"
         },
         {
             "package": "imagine/Imagine",
@@ -72,8 +78,14 @@
         {
             "package": "jms/di-extra-bundle",
             "version": "dev-master",
-            "source-reference": "1.1.0-RC",
-            "commit-date": "1345140102"
+            "alias-pretty-version": "1.2.x-dev",
+            "alias-version": "1.2.9999999.9999999-dev"
+        },
+        {
+            "package": "jms/di-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "a949d13485eff40b5672d29a136f3ecd34ed0f85",
+            "commit-date": "1346498128"
         },
         {
             "package": "jms/i18n-routing-bundle",
@@ -254,8 +266,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "c0673d77d02e9955f9e80b82478d0b7259a3fc31",
-            "commit-date": "1346413296"
+            "source-reference": "41ffd006e57b0955d44a2b07fd898689c0d63a56",
+            "commit-date": "1346482338"
         },
         {
             "package": "twig/extensions",

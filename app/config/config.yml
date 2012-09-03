@@ -215,8 +215,9 @@ neutron_tree:
 neutron_page: 
     enable: true
     page_class: "AppBundle\\Entity\\Page"
+    page_controller: "app.controller.page"
     form:
-        type: "app_form_page"
+        type: "app_page"
     templates:
         "::Theme\\Sterling\\Template\\right_sidebar.html.twig": "template.right_sidebar"
     

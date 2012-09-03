@@ -48,7 +48,7 @@ class ContentType extends BaseType
 
     public function getName()
     {
-        return 'app_form_type_page_content';
+        return 'app_page_content';
     }
     
 }

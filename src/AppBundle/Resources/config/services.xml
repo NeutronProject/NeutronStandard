@@ -6,23 +6,45 @@
 
 
     <parameters>
+        <parameter key="app.controller.page.class">AppBundle\Controller\Backend\Plugin\Page\AdministrationController</parameter>
         <parameter key="app.form.type.page.class">AppBundle\Form\Type\PageType</parameter>
         <parameter key="app.form.type.page.content.class">AppBundle\Form\Type\Page\ContentType</parameter>
+        <parameter key="app.form.type.layout.callout_box.class">AppBundle\Form\Type\Layout\CalloutBoxType</parameter>
+        <parameter key="app.form.event_subscriber.callout_box.class">AppBundle\Form\EventSubscriber\Layout\CalloutBoxTypeEventSubscriber</parameter>
         <parameter key="app.event_listener.navigation_menu.class">AppBundle\EventListener\NavigationMenuListener</parameter>
     </parameters>
 
     <services>
     
+    	<service id="app.controller.page" class="%app.controller.page.class%">
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+    
         <service id="app.form.type.page" class="%app.form.type.page.class%" scope="request">
             <argument type="service" id="request" />
-            <tag name="form.type" alias="app_form_page" />
+            <tag name="form.type" alias="app_page" />
         </service>
         		
 		<service id="app.form.type.page.content" class="%app.form.type.page.content.class%">
             <argument>%neutron_page.page_class%</argument>
             <argument>%neutron_page.templates%</argument>
-            <tag name="form.type" alias="app_form_type_page_content" />
+            <tag name="form.type" alias="app_page_content" />
 		</service>
+		
+        <service id="app.form.type.layout.callout_box" class="%app.form.type.layout.callout_box.class%" >
+            <argument type="service" id="app.form.event_subscriber.callout_box" />
+            <tag name="form.type" alias="app_layout_callout_box" />
+        </service>
+        
+        <service id="app.form.event_subscriber.callout_box" class="%app.form.event_subscriber.callout_box.class%" >
+            <argument type="service" id="neutron_layout.plugin_provider" />
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="session" />
+            <argument>%locale%</argument>
+        </service>
 		
         <service id="app.event_listener.navigation_menu" class="%app.event_listener.navigation_menu.class%">
         	<tag name="kernel.event_listener" event="neutron_admin.onMenuConfigure" method="onMenuConfigure"/> 

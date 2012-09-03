@@ -1,6 +1,14 @@
 <?php
 namespace AppBundle\Form\Type;
 
+use AppBundle\Form\Type\Layout\CalloutBoxType;
+
+use AppBundle\Form\Type\Layout\FooterTextType;
+
+use AppBundle\Form\Type\Layout\StaticWidgetsType;
+
+use AppBundle\Form\Type\Layout\BannerTextType;
+
 use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,11 +27,15 @@ class PageType extends BaseType
     {
         parent::buildForm($builder, $options);
             
-        $builder->add('content', 'app_form_type_page_content');
+        $builder->add('content', 'app_page_content');
+        $builder->add('static_widgets', new StaticWidgetsType());
+        $builder->add('banner_text', new BannerTextType());
+        $builder->add('footer_text', new FooterTextType());
+        $builder->add('callout_box', 'app_layout_callout_box', array('plugin_name' => 'neutron.plugin.page'));
     }
     
     public function getName()
     {
-        return 'app_form_page';
+        return 'app_page';
     }
 }

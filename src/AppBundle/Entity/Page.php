@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @Gedmo\TranslationEntity(class="AppBundle\Entity\Translation\PageTranslation")
  * @ORM\Table(name="page")
- * @ORM\Entity(repositoryClass="Neutron\Plugin\PageBundle\Entity\Repository\PageRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\PageRepository")
  * 
  */
 class Page extends AbstractPage
@@ -38,6 +38,11 @@ class Page extends AbstractPage
      * @ORM\JoinColumn(onDelete="SET NULL")
      */
     protected $pageImage;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="Layout", cascade={"persist", "remove", "merge"}, orphanRemoval=true)
+     */
+    protected $layout;
     
 
     public function setHeadingText($text)
@@ -60,5 +65,15 @@ class Page extends AbstractPage
     public function getPageImage()
     {
         return $this->pageImage;
+    }
+    
+    public function setLayout(Layout $layout)
+    {
+        $this->layout = $layout;
+    }
+    
+    public function getLayout()
+    {
+        return $this->layout;
     }
 }
