@@ -218,6 +218,10 @@ neutron_tree:
         path_to_jstree: jquery/plugins/jstree
         path_to_jquery_cookie_js: jquery/plugins/cookie/jquery.cookie.js
         
+neutron_layout:
+    dashboard_controller: AppBundle:Backend\Default:index
+    home_controller: AppBundle:Frontend\Default:index
+          
 neutron_page: 
     enable: true
     page_class: "AppBundle\\Entity\\Page"
@@ -237,6 +241,16 @@ neutron_block_text:
     enable: true
     is_html: false
     use_acl: false
+    block_text_class: AppBundle\Entity\BlockText
+    templates: 
+        "::Theme\\Sterling\\Widget\\BlockText\\standard.html.twig": "template.standard"
+    widget_options:
+        plugin_aware: true
+        allowed_plugins:
+            - neutron.plugin.page
+        panel_aware: true
+        allowed_panels:
+            - page_panel_sidebar_right
     
 neutron_social_networks:
     enable: true

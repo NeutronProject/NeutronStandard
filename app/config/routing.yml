@@ -78,18 +78,14 @@ _imagine:
 NeutronPageBundle:
     resource: "@NeutronPageBundle/Resources/config/routing.xml"
     prefix:   /
-    
-
-NeutronLayoutBundle:
-    resource: "@NeutronLayoutBundle/Resources/config/routing.xml"
-    prefix:   /
-    
+     
 AppBundle:
     resource: "@AppBundle/Resources/config/routing.xml"
     prefix:   /
-    
-    
-
+       
+NeutronLayoutBundle:     
+    resource: .
+    type: extra
  
 # Internal routing configuration to handle ESI
 #_internal:

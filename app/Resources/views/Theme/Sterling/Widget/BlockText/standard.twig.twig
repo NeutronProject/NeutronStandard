@@ -1,0 +1,8 @@
+<div>
+    <h2>{{ block.title }}</h2>
+    {% if isHtml === true %}
+        {{ block.content|raw }}
+    {% else %}
+        <p>{{ block.content }}</p>
+    {% endif %}
+</div>
