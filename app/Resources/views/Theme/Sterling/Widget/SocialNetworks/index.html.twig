@@ -1,0 +1,8 @@
+<div class="sidebar-widget">
+   <p class="widget-heading">{{ label }}</p>
+   <ul class="social_icons">
+   {% for link in links %}
+      <li><a href="{{ link.linkUrl }}" target="{{ link.linkTarget }}" class="{{ link.linkClass }}">{{ link.name }}</a></li>
+   {% endfor %}
+   </ul>
+</div>

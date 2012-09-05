@@ -1,3 +1,7 @@
+neutron_social_networks:
+    resource: "@NeutronSocialNetworksBundle/Resources/config/routing.xml"
+    prefix:   /admin/widget/social-networks
+
 neutron_block_text:
     resource: "@NeutronBlockTextBundle/Resources/config/routing.xml"
     prefix:   /admin/widget/block-text
@@ -29,11 +33,6 @@ NeutronAdminBundle:
 NeutronUserBundle:
     resource: "@NeutronUserBundle/Resources/config/routing.xml"
     prefix:   /admin
-
-AppBundle:
-    resource: "@AppBundle/Resources/config/routing.xml"
-    prefix:   /
-
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -75,14 +74,22 @@ JMSTranslationBundle_ui:
 _imagine:
     resource: .
     type:     imagine
-    
+   
 NeutronPageBundle:
     resource: "@NeutronPageBundle/Resources/config/routing.xml"
     prefix:   /
     
+
 NeutronLayoutBundle:
     resource: "@NeutronLayoutBundle/Resources/config/routing.xml"
     prefix:   /
+    
+AppBundle:
+    resource: "@AppBundle/Resources/config/routing.xml"
+    prefix:   /
+    
+    
+
  
 # Internal routing configuration to handle ESI
 #_internal:
