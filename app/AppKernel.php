@@ -35,11 +35,12 @@ class AppKernel extends Kernel
             new Neutron\ComponentBundle\NeutronComponentBundle(),
             new Neutron\Plugin\PageBundle\NeutronPageBundle(),
             new Neutron\LayoutBundle\NeutronLayoutBundle(),
-            new Neutron\Widget\ContactBundle\NeutronContactBundle(),
+            //new Neutron\Widget\ContactBundle\NeutronContactBundle(),
             new Neutron\SeoBundle\NeutronSeoBundle(),
-            new Neutron\Widget\PageBlockBundle\NeutronPageBlockBundle(),
+            //new Neutron\Widget\PageBlockBundle\NeutronPageBlockBundle(),
             new Neutron\Widget\BlockTextBundle\NeutronBlockTextBundle(),
             new Neutron\Widget\SocialNetworksBundle\NeutronSocialNetworksBundle(),
+            //new Neutron\Plugin\CustomerServicesBundle\NeutronCustomerServicesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

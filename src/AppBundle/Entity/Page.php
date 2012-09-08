@@ -9,16 +9,15 @@
 */
 namespace AppBundle\Entity;
 
-use Neutron\Bundle\FormBundle\Model\ImageInterface;
-
 use Neutron\Plugin\PageBundle\Entity\AbstractPage;
+
+use Neutron\Bundle\FormBundle\Model\ImageInterface;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Gedmo\TranslationEntity(class="AppBundle\Entity\Translation\PageTranslation")
  * @ORM\Table(name="page")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\PageRepository")
  * 

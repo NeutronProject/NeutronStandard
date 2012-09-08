@@ -14,7 +14,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Gedmo\TranslationEntity(class="AppBundle\Entity\Translation\LayoutTranslation")
  * @ORM\Table(name="layout")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\LayoutRepository")
  * 

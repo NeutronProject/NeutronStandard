@@ -225,17 +225,12 @@ neutron_layout:
 neutron_page: 
     enable: true
     page_class: "AppBundle\\Entity\\Page"
-    page_controller: "app.controller.page"
+    page_instance_controller: "app.controller.backend.plugin.page.page_instance"
     form:
         type: "app_page"
+        instance_type: "app_page_content"
     templates:
         "::Theme\\Sterling\\Template\\right_sidebar.html.twig": "template.right_sidebar"
-    
-neutron_contact:
-    enable: false
-    
-neutron_page_block:
-    enable: true
     
 neutron_block_text:
     enable: true

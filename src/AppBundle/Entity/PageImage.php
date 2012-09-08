@@ -16,7 +16,6 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Gedmo\TranslationEntity(class="AppBundle\Entity\Translation\PageImageTranslation")
  * @ORM\Table(name="page_image")
  * @ORM\Entity
  * 

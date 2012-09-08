@@ -6,7 +6,7 @@
 
 
     <parameters>
-        <parameter key="app.controller.page.class">AppBundle\Controller\Backend\Plugin\Page\AdministrationController</parameter>
+        <parameter key="app.controller.backend.plugin.page.page_instance.class">AppBundle\Controller\Backend\Plugin\Page\PageInstanceController</parameter>
         <parameter key="app.form.type.page.class">AppBundle\Form\Type\PageType</parameter>
         <parameter key="app.form.type.page.content.class">AppBundle\Form\Type\Page\ContentType</parameter>
         <parameter key="app.form.type.layout.callout_box.class">AppBundle\Form\Type\Layout\CalloutBoxType</parameter>
@@ -16,20 +16,27 @@
 
     <services>
     
-    	<service id="app.controller.page" class="%app.controller.page.class%">
-            <call method="setContainer">
-                <argument type="service" id="service_container" />
-            </call>
+    	<service id="app.controller.backend.plugin.page.page_instance" 
+    		class="%app.controller.backend.plugin.page.page_instance.class%"
+    		parent="neutron_page.controller.backend.page_instance.default"
+    		scope="request"
+    	>
+          
         </service>
     
-        <service id="app.form.type.page" class="%app.form.type.page.class%" scope="request">
-            <argument type="service" id="request" />
+        <service id="app.form.type.page" 
+        	class="%app.form.type.page.class%" 
+        	parent="neutron_page.form.type.page_instance"
+        	scope="request"
+        >
+           
             <tag name="form.type" alias="app_page" />
         </service>
         		
-		<service id="app.form.type.page.content" class="%app.form.type.page.content.class%">
-            <argument>%neutron_page.page_class%</argument>
-            <argument>%neutron_page.templates%</argument>
+		<service id="app.form.type.page.content" 
+			class="%app.form.type.page.content.class%"
+			parent="neutron_page.form.type.page_instance.instance"
+		>
             <tag name="form.type" alias="app_page_content" />
 		</service>
 		

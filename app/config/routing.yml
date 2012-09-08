@@ -1,3 +1,7 @@
+#neutron_customer_services:
+#    resource: "@NeutronCustomerServicesBundle/Resources/config/routing.xml"
+#    prefix:   /
+
 neutron_social_networks:
     resource: "@NeutronSocialNetworksBundle/Resources/config/routing.xml"
     prefix:   /admin/widget/social-networks
@@ -6,17 +10,11 @@ neutron_block_text:
     resource: "@NeutronBlockTextBundle/Resources/config/routing.xml"
     prefix:   /admin/widget/block-text
 
-NeutronPageBlockBundle:
-    resource: "@NeutronPageBlockBundle/Resources/config/routing.xml"
-    prefix:   /admin/widget/page-block
 
 NeutronSeoBundle:
     resource: "@NeutronSeoBundle/Resources/config/routing.xml"
     prefix:   /
 
-NeutronContactBundle:
-    resource: "@NeutronContactBundle/Resources/config/routing.xml"
-    prefix:   /
 
 NeutronTreeBundle:
     resource: "@NeutronTreeBundle/Resources/config/routing.xml"

@@ -1,6 +1,8 @@
 <?php 
 namespace AppBundle\Form\Type\Page;
 
+use Neutron\Plugin\PageBundle\Form\Type\PageInstance\InstanceType as BaseType;
+
 use Symfony\Component\Form\FormInterface;
 
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -9,15 +11,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 use Symfony\Component\Form\AbstractType;
 
-use Neutron\Plugin\PageBundle\Form\Type\Page\ContentType as BaseType;
-
 class ContentType extends BaseType
 {
-    
-    public function __construct($pageClass, array $templates)
-    {
-        parent::__construct($pageClass, $templates);
-    }
     
     public function buildForm(FormBuilderInterface $builder, array $options) 
     {

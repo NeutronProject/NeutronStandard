@@ -9,9 +9,11 @@
  */
 namespace AppBundle\Entity\Repository;
 
+use Neutron\Plugin\PageBundle\Entity\Repository\PageRepository as BaseRepository;
+
+
 use Doctrine\ORM\Query;
 
-use Neutron\Plugin\PageBundle\Entity\Repository\PageRepository as BaseRepository;
 
 class PageRepository extends BaseRepository
 {
