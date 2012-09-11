@@ -23,6 +23,9 @@ class AppExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        
+        foreach (array('services', 'page_plugin') as $basename) {
+            $loader->load(sprintf('%s.xml', $basename));
+        }
     }
 }

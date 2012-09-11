@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+    <parameters>
+        <parameter key="app.event_listener.page_plugin.class">AppBundle\EventListener\PagePluginListener</parameter>
+    </parameters>
+
+    <services>
+		<service id="app.event_listener.page_plugin" class="%app.event_listener.page_plugin.class%">
+			<argument type="service" id="translator" />
+			<tag name="kernel.event_listener" event="neutron_layout.onPluginConfigure" method="onPluginConfigure"/> 
+		</service>  
+    </services>
+	
+</container>

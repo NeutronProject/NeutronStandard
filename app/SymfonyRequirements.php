@@ -399,7 +399,7 @@ class SymfonyRequirements extends RequirementCollection
         $this->addRequirement(
             version_compare($installedPhpVersion, '5.3.16', '!='),
             'PHP version must not be 5.3.16 as Symfony won\'t work properly with it',
-            'Install PHP 5.3.17 or newer'
+            'Install PHP 5.3.17 or newer (or downgrade to an earlier PHP version)'
         );
 
         $this->addRequirement(
@@ -477,13 +477,7 @@ class SymfonyRequirements extends RequirementCollection
 
         $this->addPhpIniRequirement('detect_unicode', false);
 
-        ob_start();
-        phpinfo();
-        $phpinfo = ob_get_contents();
-        ob_end_clean();
-
-        // the phpinfo check is necessary when Suhosin is compiled into PHP
-        if (extension_loaded('suhosin') || false !== strpos($phpinfo, 'Suhosin')) {
+        if (extension_loaded('suhosin')) {
             $this->addPhpIniRequirement(
                 'suhosin.executor.include.whitelist',
                 create_function('$cfgValue', 'return false !== stripos($cfgValue, "phar");'),

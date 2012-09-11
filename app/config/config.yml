@@ -57,7 +57,7 @@ doctrine:
         auto_generate_proxy_classes: %kernel.debug%
         default_entity_manager: default
         resolve_target_entities:
-            Neutron\TreeBundle\Model\TreeNodeInterface: Neutron\AdminBundle\Entity\MainTree
+            Neutron\LayoutBundle\Model\Category\CategoryInterface: AppBundle\Entity\Category 
             Neutron\Plugin\PageBundle\Model\PageInterface: AppBundle\Entity\Page
         entity_managers:
             default:
@@ -221,6 +221,8 @@ neutron_tree:
 neutron_layout:
     dashboard_controller: AppBundle:Backend\Default:index
     home_controller: AppBundle:Frontend\Default:index
+    category:
+        category_class: AppBundle\Entity\Category
           
 neutron_page: 
     enable: true
