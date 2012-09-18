@@ -1,8 +1,4 @@
 <div>
     <h2>{{ block.title }}</h2>
-    {% if isHtml is sameas(true) %}
-        {{ block.content|raw }}
-    {% else %}
-        <p>{{ block.content }}</p>
-    {% endif %}
+    <p>{{ block.content }}</p>
 </div>

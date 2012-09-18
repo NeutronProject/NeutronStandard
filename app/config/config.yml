@@ -239,8 +239,6 @@ neutron_page:
     
 neutron_block_text:
     enable: true
-    is_html: false
-    use_acl: false
     block_text_class: AppBundle\Entity\BlockText
     templates: 
         "::Theme\\Sterling\\Widget\\BlockText\\standard.html.twig": "template.standard"
@@ -252,17 +250,17 @@ neutron_block_text:
         allowed_panels:
             - page_panel_sidebar_right
     
-neutron_social_networks:
-    enable: true
-    social_network_class: AppBundle\Entity\SocialNetwork
-    template: "::Theme\\Sterling\\Widget\\SocialNetworks\\index.html.twig"
-    widget_options:
-        plugin_aware: true
-        allowed_plugins:
-            - neutron.plugin.page
-        panel_aware: true
-        allowed_panels:
-            - page_panel_sidebar_right
+#neutron_social_networks:
+#    enable: true
+#    social_network_class: AppBundle\Entity\SocialNetwork
+#    template: "::Theme\\Sterling\\Widget\\SocialNetworks\\index.html.twig"
+#    widget_options:
+#        plugin_aware: true
+#        allowed_plugins:
+#            - neutron.plugin.page
+#        panel_aware: true
+#        allowed_panels:
+#            - page_panel_sidebar_right
   
 jms_translation:
     configs:

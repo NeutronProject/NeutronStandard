@@ -2,9 +2,9 @@
 #    resource: "@NeutronCustomerServicesBundle/Resources/config/routing.xml"
 #    prefix:   /
 
-neutron_social_networks:
-    resource: "@NeutronSocialNetworksBundle/Resources/config/routing.xml"
-    prefix:   /admin/widget/social-networks
+#neutron_social_networks:
+#    resource: "@NeutronSocialNetworksBundle/Resources/config/routing.xml"
+#    prefix:   /admin/widget/social-networks
 
 neutron_block_text:
     resource: "@NeutronBlockTextBundle/Resources/config/routing.xml"
