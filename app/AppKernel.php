@@ -34,7 +34,7 @@ class AppKernel extends Kernel
             new Neutron\TreeBundle\NeutronTreeBundle(),
             new Neutron\ComponentBundle\NeutronComponentBundle(),
             new Neutron\Plugin\PageBundle\NeutronPageBundle(),
-            new Neutron\LayoutBundle\NeutronLayoutBundle(),
+            new Neutron\MvcBundle\NeutronMvcBundle(),
             //new Neutron\Widget\ContactBundle\NeutronContactBundle(),
             new Neutron\SeoBundle\NeutronSeoBundle(),
             //new Neutron\Widget\PageBlockBundle\NeutronPageBlockBundle(),

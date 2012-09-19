@@ -5,7 +5,7 @@ use Symfony\Component\Translation\TranslatorInterface;
 
 use Neutron\Plugin\PageBundle\PagePlugin;
 
-use Neutron\LayoutBundle\Event\ConfigurePluginEvent;
+use Neutron\MvcBundle\Event\ConfigurePluginEvent;
 
 class PagePluginListener
 {

@@ -1,7 +1,7 @@
 <?php 
 namespace AppBundle\EventListener;
 
-use Neutron\LayoutBundle\Menu\Navigation;
+use Neutron\MvcBundle\Menu\Navigation;
 
 use Knp\Menu\FactoryInterface;
 
@@ -27,7 +27,7 @@ class NavigationMenuListener
         
         $menuHeader->addChild('menu.home', array(
             'label' => 'Home',
-            'route' => 'neutron_layout.distributor',
+            'route' => 'neutron_mvc.distributor',
             'routeParameters' => array('slug' => 'level-one')
         ));
         
@@ -48,7 +48,7 @@ class NavigationMenuListener
         
         $menuFooter->addChild('menu.home', array(
             'label' => 'Home',
-            'route' => 'neutron_layout.distributor',
+            'route' => 'neutron_mvc.distributor',
             'routeParameters' => array('slug' => 'level-one')
         ));
         

@@ -11,7 +11,7 @@
     <services>
 		<service id="app.event_listener.page_plugin" class="%app.event_listener.page_plugin.class%">
 			<argument type="service" id="translator" />
-			<tag name="kernel.event_listener" event="neutron_layout.onPluginConfigure" method="onPluginConfigure"/> 
+			<tag name="kernel.event_listener" event="neutron_mvc.onPluginConfigure" method="onPluginConfigure"/> 
 		</service>  
     </services>
 	

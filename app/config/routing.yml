@@ -81,7 +81,7 @@ AppBundle:
     resource: "@AppBundle/Resources/config/routing.xml"
     prefix:   /
        
-NeutronLayoutBundle:     
+neutron_mvc:     
     resource: .
     type: extra
  

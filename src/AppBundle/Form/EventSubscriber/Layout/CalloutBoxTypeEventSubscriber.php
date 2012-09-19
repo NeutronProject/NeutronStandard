@@ -9,7 +9,7 @@
  */
 namespace AppBundle\Form\EventSubscriber\Layout;
 
-use Neutron\LayoutBundle\Provider\PluginProviderInterface;
+use Neutron\MvcBundle\Provider\PluginProviderInterface;
 
 use Symfony\Component\HttpFoundation\Session\Session;
 

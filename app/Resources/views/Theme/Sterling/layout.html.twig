@@ -48,7 +48,7 @@
          
             <div class="one_half">
                <div class="sidebar-widget">
-                  {% set menu_header = knp_menu_get('NeutronLayoutBundle:Navigation:main', ['menu.header'])%}
+                  {% set menu_header = knp_menu_get('NeutronMvcBundle:Navigation:main', ['menu.header'])%}
                   {{ 
                     knp_menu_render(menu_header, {
                     'depth': 1,
@@ -89,7 +89,7 @@
             </div>
             <nav>
                 
-                {% set navigation = knp_menu_get('NeutronLayoutBundle:Navigation:main') %}
+                {% set navigation = knp_menu_get('NeutronMvcBundle:Navigation:main') %}
                 {{ 
                     knp_menu_render(navigation, {
                     'template': '::Theme\\Sterling\\Menu\\navigation.html.twig',
@@ -112,7 +112,7 @@
       <p class="page-banner-description">{% block page_banner_text %}{% endblock %}</p>
       {% block search %}{% endblock %}
       
-      {{ neutron_admin_breadcrumbs_render(knp_menu_get('NeutronLayoutBundle:Navigation:main'), 
+      {{ neutron_admin_breadcrumbs_render(knp_menu_get('NeutronMvcBundle:Navigation:main'), 
          {'template': '::Theme\\Sterling\\Menu\\breadcrumbs.html.twig'}) 
       }}
    </div>
@@ -160,7 +160,7 @@
                    </div>
                    <!-- END foot-copy -->
                    <a href="top#" id="scroll_to_top" class="link-top">{% trans from "appBundle" %}layout.scroll_top{% endtrans %}</a>
-                   {% set menu_footer = knp_menu_get('NeutronLayoutBundle:Navigation:main', ['menu.footer'])%}
+                   {% set menu_footer = knp_menu_get('NeutronMvcBundle:Navigation:main', ['menu.footer'])%}
                     {{ 
                         knp_menu_render(menu_footer, {
                         'depth': 1,

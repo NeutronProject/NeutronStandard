@@ -9,7 +9,7 @@
  */
 namespace AppBundle\Entity\Repository;
 
-use Neutron\LayoutBundle\Entity\Repository\CategoryRepository as BaseRepository;
+use Neutron\MvcBundle\Entity\Repository\CategoryRepository as BaseRepository;
 
 class CategoryRepository extends BaseRepository
 {}

@@ -9,7 +9,7 @@
 */
 namespace AppBundle\Entity;
 
-use Neutron\LayoutBundle\Entity\AbstractCategory;
+use Neutron\MvcBundle\Entity\AbstractCategory;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 

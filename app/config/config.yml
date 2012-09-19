@@ -57,7 +57,7 @@ doctrine:
         auto_generate_proxy_classes: %kernel.debug%
         default_entity_manager: default
         resolve_target_entities:
-            Neutron\LayoutBundle\Model\Category\CategoryInterface: AppBundle\Entity\Category 
+            Neutron\MvcBundle\Model\Category\CategoryInterface: AppBundle\Entity\Category 
             Neutron\Plugin\PageBundle\Model\PageInterface: AppBundle\Entity\Page
         entity_managers:
             default:
@@ -221,7 +221,7 @@ neutron_tree:
         path_to_jstree: jquery/plugins/jstree
         path_to_jquery_cookie_js: jquery/plugins/cookie/jquery.cookie.js
         
-neutron_layout:
+neutron_mvc:
     dashboard_controller: AppBundle:Backend\Default:index
     home_controller: AppBundle:Frontend\Default:index
     category:

@@ -46,7 +46,7 @@
         </service>
         
         <service id="app.form.event_subscriber.callout_box" class="%app.form.event_subscriber.callout_box.class%" >
-            <argument type="service" id="neutron_layout.plugin_provider" />
+            <argument type="service" id="neutron_mvc.plugin_provider" />
             <argument type="service" id="form.factory" />
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="session" />
