@@ -236,6 +236,19 @@ neutron_page:
         instance_type: "app_page_content"
     templates:
         "::Theme\\Sterling\\Template\\right_sidebar.html.twig": "template.right_sidebar"
+        
+neutron_customer_services: 
+    enable: true
+    plugin_class: "AppBundle\\Entity\\CustomerServicesPlugin" 
+    plugin_controller_backend: app.controller.backend.plugin.customer_services
+    plugin_form: 
+        type: app_customer_services
+    plugin_templates:
+        "::Theme\\Sterling\\Plugin\\CustomerServices\\Template\\standard.html.twig": "template.standard"
+    item: 
+        class: "AppBundle\\Entity\\CustomerService" 
+        templates:
+            "::Theme\\Sterling\\Plugin\\CustomerServices\\Template\\standard.html.twig": "template.standard"
     
 neutron_block_text:
     enable: true
@@ -246,21 +259,23 @@ neutron_block_text:
         plugin_aware: true
         allowed_plugins:
             - neutron.plugin.page
+            - neutron.plugin.customer_services
         panel_aware: true
         allowed_panels:
             - page_panel_sidebar_right
+            - customer_services_panel_sidebar_right
     
-#neutron_social_networks:
-#    enable: true
-#    social_network_class: AppBundle\Entity\SocialNetwork
-#    template: "::Theme\\Sterling\\Widget\\SocialNetworks\\index.html.twig"
-#    widget_options:
-#        plugin_aware: true
-#        allowed_plugins:
-#            - neutron.plugin.page
-#        panel_aware: true
-#        allowed_panels:
-#            - page_panel_sidebar_right
+neutron_social_networks:
+    enable: true
+    social_network_class: AppBundle\Entity\SocialNetwork
+    template: "::Theme\\Sterling\\Widget\\SocialNetworks\\index.html.twig"
+    widget_options:
+        plugin_aware: true
+        allowed_plugins:
+            - neutron.plugin.page
+        panel_aware: true
+        allowed_panels:
+            - page_panel_sidebar_right
   
 jms_translation:
     configs:

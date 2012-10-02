@@ -53,7 +53,7 @@ class CalloutBoxType extends AbstractType
             ->add('calloutBoxContent', 'textarea', array(
                 'label' => 'form.calloutBoxContent',
                 'attr' => array(
-                        'rows' => 10
+                    'rows' => 10
                 ),
                 'translation_domain' => 'appBundle'
             ))

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+    <parameters>
+        <parameter key="app.controller.backend.plugin.customer_services.class">AppBundle\Controller\Backend\Plugin\CustomerServices\CustomerServicesPluginController</parameter>
+        <parameter key="app.form.type.customer_services.class">AppBundle\Form\Type\CustomerServicesType</parameter>
+        <parameter key="app.event_listener.customer_services_plugin.class">AppBundle\EventListener\CustomerServicesPluginListener</parameter>
+    </parameters>
+
+    <services>		
+    	<service id="app.controller.backend.plugin.customer_services" 
+    		class="%app.controller.backend.plugin.customer_services.class%"
+    		parent="neutron_customer_services.controller.backend.plugin.default"
+    		scope="request"
+    	>
+    	</service>
+    	
+  	    <service id="app.form.type.customer_services" 
+        	class="%app.form.type.customer_services.class%" 
+        	parent="neutron_customer_services.form.type.customer_services_plugin"
+        	scope="request"
+        >
+           
+            <tag name="form.type" alias="app_customer_services" />
+        </service>
+        
+      	<service id="app.event_listener.customer_services_plugin" class="%app.event_listener.customer_services_plugin.class%">
+			<argument type="service" id="translator" />
+			<tag name="kernel.event_listener" event="neutron_mvc.onPluginConfigure" method="onPluginConfigure"/> 
+		</service>  
+    </services>
+	
+</container>

@@ -2,9 +2,11 @@ imports:
     - { resource: config_dev.yml }
 
 framework:
-    test: true
+    test: ~
     session:
         storage_id: session.storage.mock_file
+    profiler:
+        enable: false
 
 web_profiler:
     toolbar: false
