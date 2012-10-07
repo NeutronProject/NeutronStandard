@@ -1,7 +1,3 @@
-neutron_customer_services:
-    resource: "@NeutronCustomerServicesBundle/Resources/config/routing.xml"
-    prefix:   /
-
 neutron_social_networks:
     resource: "@NeutronSocialNetworksBundle/Resources/config/routing.xml"
     prefix:   /admin/widget/social-networks
@@ -84,6 +80,11 @@ AppBundle:
 neutron_mvc:     
     resource: .
     type: extra
+    
+neutron_customer_services:
+    resource: "@NeutronCustomerServicesBundle/Resources/config/routing.xml"
+    prefix:   /
+
  
 # Internal routing configuration to handle ESI
 #_internal:

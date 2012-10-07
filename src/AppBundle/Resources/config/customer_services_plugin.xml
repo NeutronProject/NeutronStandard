@@ -8,6 +8,9 @@
         <parameter key="app.controller.backend.plugin.customer_services.class">AppBundle\Controller\Backend\Plugin\CustomerServices\CustomerServicesPluginController</parameter>
         <parameter key="app.form.type.customer_services.class">AppBundle\Form\Type\CustomerServicesType</parameter>
         <parameter key="app.event_listener.customer_services_plugin.class">AppBundle\EventListener\CustomerServicesPluginListener</parameter>
+        <parameter key="app.controller.backend.plugin.customer_services.administration.class">AppBundle\Controller\Backend\Plugin\CustomerServices\AdministrationController</parameter>
+        <parameter key="app.form.type.customer_service.content.class">AppBundle\Form\Type\CustomerService\ContentType</parameter>
+        <parameter key="app.form.type.customer_service.class">AppBundle\Form\Type\CustomerServiceType</parameter>
     </parameters>
 
     <services>		
@@ -31,6 +34,29 @@
 			<argument type="service" id="translator" />
 			<tag name="kernel.event_listener" event="neutron_mvc.onPluginConfigure" method="onPluginConfigure"/> 
 		</service>  
+		
+		<service id="app.controller.backend.plugin.customer_services.administration" 
+    		class="%app.controller.backend.plugin.customer_services.administration.class%"
+    		parent="neutron_customer_services.controller.backend.administration.default"
+    		scope="request"
+    	>
+    	</service>
+    	
+    	<service id="app.form.type.customer_service" 
+        	class="%app.form.type.customer_service.class%" 
+        	parent="neutron_customer_services.form.type.customer_service"
+        >
+           
+            <tag name="form.type" alias="app_customer_service" />
+        </service>
+    	
+    	<service id="app.form.type.customer_service.content" 
+        	class="%app.form.type.customer_service.content.class%" 
+        	parent="neutron_customer_services.form.type.customer_service.content"
+        >
+           
+            <tag name="form.type" alias="app_customer_service_content" />
+        </service>
     </services>
 	
 </container>

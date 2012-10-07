@@ -9,6 +9,8 @@
 */
 namespace AppBundle\Entity;
 
+use Neutron\Bundle\FormBundle\Model\ImageInterface;
+
 use Neutron\Plugin\CustomerServicesBundle\Entity\AbstractCustomerService;
 
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -28,6 +30,12 @@ class CustomerService extends AbstractCustomerService
      */
     protected $layout;
     
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\CustomerServiceImage", cascade={"all"}, orphanRemoval=true)
+     * @ORM\JoinColumn(onDelete="SET NULL")
+     */
+    protected $image;
+    
     public function setLayout(Layout $layout)
     {
         $this->layout = $layout;
@@ -36,5 +44,15 @@ class CustomerService extends AbstractCustomerService
     public function getLayout()
     {
         return $this->layout;
+    }
+    
+    public function setImage(ImageInterface $image)
+    {
+        $this->image = $image;
+    }
+    
+    public function getImage()
+    {
+        return $this->image;
     }
 }
