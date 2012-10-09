@@ -62,6 +62,9 @@ doctrine:
             Neutron\Plugin\CustomerServices\Model\CustomerServiceReferenceInterface: AppBundle\Entity\CustomerServiceReference 
             Neutron\Plugin\CustomerServicesBundle\Model\CustomerServiceInterface: AppBundle\Entity\CustomerService
             Neutron\Plugin\CustomerServicesBundle\Model\CustomerServicesPluginInterface: AppBundle\Entity\CustomerServicesPlugin
+            Neutron\Plugin\TeamMemberBundle\Model\TeamMemberOverviewInterface: AppBundle\Entity\TeamMemberOverview
+            Neutron\Plugin\TeamMemberBundle\Model\TeamMemberReferenceInterface: AppBundle\Entity\TeamMemberReference
+            Neutron\Plugin\TeamMemberBundle\Model\TeamMemberInterface: AppBundle\Entity\TeamMember
         entity_managers:
             default:
                 connection: default
@@ -256,6 +259,15 @@ neutron_customer_services:
             type: app_customer_service
         templates:
             "::Theme\\Sterling\\Plugin\\CustomerServices\\Item\\standard.html.twig": "template.standard"
+            
+neutron_team_member: 
+    enable: true
+    team_member_overview_class: "AppBundle\\Entity\\TeamMemberOverview" 
+    team_member_reference_class: "AppBundle\\Entity\\TeamMemberReference" 
+    team_member_class: "AppBundle\\Entity\\TeamMember" 
+    team_member_overview_templates:
+        "::Theme\\Sterling\\Plugin\\TeamMember\\Overview\\standard.html.twig": "template.standard"
+
     
 neutron_block_text:
     enable: true

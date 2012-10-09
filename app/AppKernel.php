@@ -41,6 +41,7 @@ class AppKernel extends Kernel
             new Neutron\Widget\BlockTextBundle\NeutronBlockTextBundle(),
             new Neutron\Widget\SocialNetworksBundle\NeutronSocialNetworksBundle(),
             new Neutron\Plugin\CustomerServicesBundle\NeutronCustomerServicesBundle(),
+            new Neutron\Plugin\TeamMemberBundle\NeutronTeamMemberBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
