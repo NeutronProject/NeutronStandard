@@ -1,7 +1,7 @@
 <?php 
 namespace AppBundle\Form\Type\Page;
 
-use Neutron\Plugin\PageBundle\Form\Type\PageInstance\InstanceType as BaseType;
+use Neutron\Plugin\PageBundle\Form\Type\Page\ContentType as BaseType;
 
 use Symfony\Component\Form\FormInterface;
 
@@ -11,7 +11,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 use Symfony\Component\Form\AbstractType;
 
-class ContentType extends BaseType
+class ContentType extends BaseType  
 {
     
     public function buildForm(FormBuilderInterface $builder, array $options) 
@@ -23,13 +23,13 @@ class ContentType extends BaseType
         $builder
            ->add('headingText', 'text', array(
                'label' => 'form.headingText',
-               'translation_domain' => 'NeutronPageBundle'
+               'translation_domain' => 'AppBundle'
            ))
            ->add('pageImage', 'neutron_image_upload', array(
                'label' => 'form.image',
                'required' => false,
                'data_class' => 'AppBundle\Entity\PageImage',
-               'translation_domain' => 'NeutronPageBundle',
+               'translation_domain' => 'AppBundle',
                'configs' => array(
                    'minWidth' => '620',
                    'minHeight' => '161',
@@ -37,8 +37,7 @@ class ContentType extends BaseType
                    'maxSize' => '2M',
                ),
            ))
-        ;
-        
+        ;      
     }
 
     public function getName()

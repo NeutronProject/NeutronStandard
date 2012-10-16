@@ -9,18 +9,18 @@
 */
 namespace AppBundle\Entity;
 
-use Neutron\Plugin\CustomerServicesBundle\Entity\AbstractCustomerServicesPlugin;
+use Neutron\Plugin\CustomerServiceBundle\Entity\AbstractCustomerServiceOverview as BaseEntity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="plugin_customer_services")
- * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\CustomerServicesPluginRepository")
+ * @ORM\Table(name="customer_service_overview")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\CustomerServiceOverviewRepository")
  * 
  */
-class CustomerServicesPlugin extends AbstractCustomerServicesPlugin
+class CustomerServiceOverview extends BaseEntity
 {
     
     /**

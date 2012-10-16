@@ -9,12 +9,12 @@
  */
 namespace AppBundle\Entity\Repository;
 
-use Neutron\Plugin\CustomerServicesBundle\Entity\Repository\CustomerServicesPluginRepository as BaseRepository;
+use Neutron\Plugin\CustomerServiceBundle\Entity\Repository\CustomerServiceOverviewRepository as BaseRepository;
 
 use Doctrine\ORM\Query;
 
 
-class CustomerServicesPluginRepository extends BaseRepository
+class CustomerServiceOverviewRepository extends BaseRepository
 {
     public function getChoices($locale)
     {

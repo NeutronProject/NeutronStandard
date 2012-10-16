@@ -11,7 +11,7 @@ namespace AppBundle\Entity;
 
 use Neutron\Bundle\FormBundle\Model\ImageInterface;
 
-use Neutron\Plugin\CustomerServicesBundle\Entity\AbstractCustomerService;
+use Neutron\Plugin\CustomerServiceBundle\Entity\AbstractCustomerService;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 

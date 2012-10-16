@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+	<class name="AppBundle\Entity\TeamMember">
+
+        <property name="github">
+        	<constraint name="NotBlank">
+                <option name="message">github.blank</option>
+                <option name="groups">
+                    <value>github_enabled</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">50</option>
+                <option name="message">github.long</option>
+                <option name="groups">
+                    <value>default</value>
+                </option>
+            </constraint>
+        </property>
+        
+        <property name="twitter">
+        	<constraint name="NotBlank">
+                <option name="message">twitter.blank</option>
+                <option name="groups">
+                    <value>twitter_enabled</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">50</option>
+                <option name="message">twitter.long</option>
+                <option name="groups">
+                    <value>default</value>
+                </option>
+            </constraint>
+        </property>
+        
+	</class>
+</constraint-mapping>

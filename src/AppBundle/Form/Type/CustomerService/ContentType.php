@@ -3,7 +3,7 @@ namespace AppBundle\Form\Type\CustomerService;
 
 use Symfony\Component\Form\FormBuilderInterface;
 
-use Neutron\Plugin\CustomerServicesBundle\Form\Type\CustomerService\ContentType as BaseType;
+use Neutron\Plugin\CustomerServiceBundle\Form\Type\CustomerService\ContentType as BaseType;
 
 class ContentType extends BaseType
 {

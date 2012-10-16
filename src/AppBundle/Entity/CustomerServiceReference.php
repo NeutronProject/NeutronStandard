@@ -9,11 +9,12 @@
 */
 namespace AppBundle\Entity;
 
-use Neutron\Plugin\CustomerServicesBundle\Entity\AbstractCustomerServiceReference;
+use Neutron\Plugin\CustomerServiceBundle\Entity\AbstractCustomerServiceReference;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Table(name="customer_service_reference")
  * @ORM\Entity
  */
 class CustomerServiceReference extends AbstractCustomerServiceReference

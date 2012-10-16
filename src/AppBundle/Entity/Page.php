@@ -39,7 +39,7 @@ class Page extends AbstractPage
     protected $pageImage;
     
     /**
-     * @ORM\OneToOne(targetEntity="Layout", cascade={"persist", "remove", "merge"}, orphanRemoval=true)
+     * @ORM\OneToOne(targetEntity="Layout", cascade={"persist", "remove", "merge"}, orphanRemoval=true, fetch="EAGER")
      */
     protected $layout;
     

@@ -9,7 +9,7 @@
  */
 namespace AppBundle\Entity\Repository;
 
-use Neutron\Plugin\CustomerServicesBundle\Entity\Repository\CustomerServiceRepository as BaseRepository;
+use Neutron\Plugin\CustomerServiceBundle\Entity\Repository\CustomerServiceRepository as BaseRepository;
 
 use Doctrine\ORM\Query;
 

@@ -72,8 +72,8 @@ neutron_mvc:
     resource: .
     type: extra
     
-neutron_customer_services:
-    resource: "@NeutronCustomerServicesBundle/Resources/config/routing.xml"
+neutron_customer_service:
+    resource: "@NeutronCustomerServiceBundle/Resources/config/routing.xml"
     prefix:   /
 
 neutron_team_member:

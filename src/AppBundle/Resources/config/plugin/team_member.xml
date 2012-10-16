@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+    <parameters>
+        <parameter key="app.event_listener.team_member_plugin.class">AppBundle\EventListener\TeamMemberPluginListener</parameter>
+        <parameter key="app.controller.backend.plugin.team_member_overview.class">AppBundle\Controller\Backend\Plugin\TeamMember\TeamMemberOverviewController</parameter>
+		<parameter key="app.form.type.team_member_overview.class">AppBundle\Form\Type\TeamMemberOverviewType</parameter>
+		<parameter key="app.form.type.team_member.class">AppBundle\Form\Type\TeamMemberType</parameter>
+        <parameter key="app.form.type.team_member.content.class">AppBundle\Form\Type\TeamMember\ContentType</parameter>
+    </parameters>
+
+    <services>
+		<service id="app.event_listener.team_member_plugin" class="%app.event_listener.team_member_plugin.class%">
+			<argument type="service" id="translator" />
+			<tag name="kernel.event_listener" event="neutron_mvc.onPluginConfigure" method="onPluginConfigure"/> 
+		</service>  
+		
+    	<service id="app.controller.backend.plugin.team_member_overview" 
+    		class="%app.controller.backend.plugin.team_member_overview.class%"
+    		parent="neutron_team_member.controller.backend.team_member_overview.default"
+    	>
+        </service>
+    
+        <service id="app.form.type.team_member_overview" 
+        	class="%app.form.type.team_member_overview.class%" 
+        	parent="neutron_team_member.form.type.team_member_overview"
+        >
+            <tag name="form.type" alias="app_team_member_overview" />
+        </service>
+        
+        <service id="app.form.type.team_member" 
+        	class="%app.form.type.team_member.class%" 
+        	parent="neutron_team_member.form.type.team_member"
+        >
+            <tag name="form.type" alias="app_team_member" />
+        </service>
+        		
+		<service id="app.form.type.team_member.content" 
+			class="%app.form.type.team_member.content.class%"
+			parent="neutron_team_member.form.type.team_member.content"
+		>
+            <tag name="form.type" alias="app_team_member_content" />
+		</service>
+		
+    </services>
+	
+</container>

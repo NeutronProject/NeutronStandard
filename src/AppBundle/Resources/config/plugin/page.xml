@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+    <parameters>
+        <parameter key="app.event_listener.page_plugin.class">AppBundle\EventListener\PagePluginListener</parameter>
+        <parameter key="app.controller.backend.plugin.page.class">AppBundle\Controller\Backend\Plugin\Page\PageController</parameter>
+		<parameter key="app.form.type.page.class">AppBundle\Form\Type\PageType</parameter>
+        <parameter key="app.form.type.page.content.class">AppBundle\Form\Type\Page\ContentType</parameter>
+    </parameters>
+
+    <services>
+		<service id="app.event_listener.page_plugin" class="%app.event_listener.page_plugin.class%">
+			<argument type="service" id="translator" />
+			<tag name="kernel.event_listener" event="neutron_mvc.onPluginConfigure" method="onPluginConfigure"/> 
+		</service>  
+		
+    	<service id="app.controller.backend.plugin.page" 
+    		class="%app.controller.backend.plugin.page.class%"
+    		parent="neutron_page.controller.backend.page.default"
+    	>
+          
+        </service>
+    
+        <service id="app.form.type.page" 
+        	class="%app.form.type.page.class%" 
+        	parent="neutron_page.form.type.page"
+        >
+            <tag name="form.type" alias="app_page" />
+        </service>
+        		
+		<service id="app.form.type.page.content" 
+			class="%app.form.type.page.content.class%"
+			parent="neutron_page.form.type.page.content"
+		>
+            <tag name="form.type" alias="app_page_content" />
+		</service>
+		
+    </services>
+	
+</container>

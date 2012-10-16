@@ -40,7 +40,7 @@ class AppKernel extends Kernel
             //new Neutron\Widget\PageBlockBundle\NeutronPageBlockBundle(),
             new Neutron\Widget\BlockTextBundle\NeutronBlockTextBundle(),
             new Neutron\Widget\SocialNetworksBundle\NeutronSocialNetworksBundle(),
-            new Neutron\Plugin\CustomerServicesBundle\NeutronCustomerServicesBundle(),
+            new Neutron\Plugin\CustomerServiceBundle\NeutronCustomerServiceBundle(),
             new Neutron\Plugin\TeamMemberBundle\NeutronTeamMemberBundle(),
         );
 

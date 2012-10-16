@@ -1,13 +1,13 @@
 <?php 
 namespace AppBundle\EventListener;
 
-use Neutron\Plugin\CustomerServicesBundle\CustomerServicesPlugin;
+use Neutron\Plugin\CustomerServiceBundle\CustomerServicePlugin;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
 use Neutron\MvcBundle\Event\ConfigurePluginEvent;
 
-class CustomerServicesPluginListener
+class CustomerServicePluginListener
 {
     protected $translator; 
     
@@ -20,13 +20,13 @@ class CustomerServicesPluginListener
     {     
         $plugin = $event->getPlugin();
         
-        if ($plugin->getName() !== CustomerServicesPlugin::IDENTIFIER){
+        if ($plugin->getName() !== CustomerServicePlugin::IDENTIFIER){
             return;
         }
         
         $plugin
             ->addPanel($event->getFactory()->createPanel(
-                'customer_services_panel_sidebar_right', array(
+                'customer_service_panel_sidebar_right', array(
                     'label' => $this->translator->trans('panel.sidebar.right.label', array(), 'AppBundle'),
                     'description' => $this->translator->trans('panel.sidebar.right.description', array(), 'AppBundle')
                 )

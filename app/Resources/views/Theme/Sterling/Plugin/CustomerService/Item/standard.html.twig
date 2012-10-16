@@ -63,6 +63,16 @@
    
    {{ customerService.content|raw }}
    
+    <div class="tour-pagination-links clearfix">
+        {% if prevService %}
+            <a class="tour-pagination-previous" href="{{ path('neutron_customer_service.frontend.customer_service', {'categorySlug': category.slug, 'serviceSlug': prevService.slug}) }}">&larr; {{ prevService.title }}</a>
+        {% endif %}
+        
+        {% if nextService %}
+            <a class="tour-pagination-next" href="{{ path('neutron_customer_service.frontend.customer_service', {'categorySlug': category.slug, 'serviceSlug': nextService.slug}) }}">{{ nextService.title }} &rarr;</a>
+        {% endif %}
+    </div>
+   
 </div>
 {% endblock %}
 

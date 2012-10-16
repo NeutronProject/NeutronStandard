@@ -6,40 +6,14 @@
 
 
     <parameters>
-        <parameter key="app.controller.backend.plugin.page.page_instance.class">AppBundle\Controller\Backend\Plugin\Page\PageInstanceController</parameter>
-        <parameter key="app.form.type.page.class">AppBundle\Form\Type\PageType</parameter>
-        <parameter key="app.form.type.page.content.class">AppBundle\Form\Type\Page\ContentType</parameter>
+        
         <parameter key="app.form.type.layout.callout_box.class">AppBundle\Form\Type\Layout\CalloutBoxType</parameter>
         <parameter key="app.form.event_subscriber.callout_box.class">AppBundle\Form\EventSubscriber\Layout\CalloutBoxTypeEventSubscriber</parameter>
         <parameter key="app.event_listener.navigation_menu.class">AppBundle\EventListener\NavigationMenuListener</parameter>
     </parameters>
 
     <services>
-    
-    	<service id="app.controller.backend.plugin.page.page_instance" 
-    		class="%app.controller.backend.plugin.page.page_instance.class%"
-    		parent="neutron_page.controller.backend.page_instance.default"
-    		scope="request"
-    	>
-          
-        </service>
-    
-        <service id="app.form.type.page" 
-        	class="%app.form.type.page.class%" 
-        	parent="neutron_page.form.type.page_instance"
-        	scope="request"
-        >
-           
-            <tag name="form.type" alias="app_page" />
-        </service>
-        		
-		<service id="app.form.type.page.content" 
-			class="%app.form.type.page.content.class%"
-			parent="neutron_page.form.type.page_instance.instance"
-		>
-            <tag name="form.type" alias="app_page_content" />
-		</service>
-		
+ 
         <service id="app.form.type.layout.callout_box" class="%app.form.type.layout.callout_box.class%" >
             <argument type="service" id="app.form.event_subscriber.callout_box" />
             <tag name="form.type" alias="app_layout_callout_box" />

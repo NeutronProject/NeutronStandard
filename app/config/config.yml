@@ -59,9 +59,9 @@ doctrine:
         resolve_target_entities:
             Neutron\MvcBundle\Model\Category\CategoryInterface: AppBundle\Entity\Category 
             Neutron\Plugin\PageBundle\Model\PageInterface: AppBundle\Entity\Page
-            Neutron\Plugin\CustomerServices\Model\CustomerServiceReferenceInterface: AppBundle\Entity\CustomerServiceReference 
-            Neutron\Plugin\CustomerServicesBundle\Model\CustomerServiceInterface: AppBundle\Entity\CustomerService
-            Neutron\Plugin\CustomerServicesBundle\Model\CustomerServicesPluginInterface: AppBundle\Entity\CustomerServicesPlugin
+            Neutron\Plugin\CustomerService\Model\CustomerServiceReferenceInterface: AppBundle\Entity\CustomerServiceReference 
+            Neutron\Plugin\CustomerServiceBundle\Model\CustomerServiceInterface: AppBundle\Entity\CustomerService
+            Neutron\Plugin\CustomerServiceBundle\Model\CustomerServiceOverviewInterface: AppBundle\Entity\CustomerServiceOverview
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberOverviewInterface: AppBundle\Entity\TeamMemberOverview
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberReferenceInterface: AppBundle\Entity\TeamMemberReference
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberInterface: AppBundle\Entity\TeamMember
@@ -210,16 +210,6 @@ neutron_form:
         normalize_height: 1000
         max_uploaded_images: 20
         max_uploaded_files: 20
-        
-avalanche_imagine:
-    driver: imagick
-    source_root:  %kernel.root_dir%/../web
-    web_root:     %kernel.root_dir%/../web
-    cache_prefix: cache
-    filters:
-        AuthorImage_thumb:
-            type:    thumbnail
-            options: { size: [220, 90], mode: outbound, quality: 100, format: jpg }
             
 neutron_tree:
     use_translatable: %use_translatable%
@@ -236,38 +226,40 @@ neutron_mvc:
 neutron_page: 
     enable: true
     page_class: "AppBundle\\Entity\\Page"
-    page_instance_controller: "app.controller.backend.plugin.page.page_instance"
+    page_controller_backend: "app.controller.backend.plugin.page"
     form:
         type: "app_page"
-        instance_type: "app_page_content"
     templates:
         "::Theme\\Sterling\\Plugin\\Page\\right_sidebar.html.twig": "template.right_sidebar"
         
-neutron_customer_services: 
+neutron_customer_service: 
     enable: true
-    plugin_class: "AppBundle\\Entity\\CustomerServicesPlugin" 
-    plugin_controller_backend: app.controller.backend.plugin.customer_services
-    plugin_form: 
-        type: app_customer_services
-    plugin_templates:
-        "::Theme\\Sterling\\Plugin\\CustomerServices\\Overview\\standard.html.twig": "template.standard"
-    item: 
-        class: "AppBundle\\Entity\\CustomerService" 
-        reference_class: "AppBundle\Entity\CustomerServiceReference" 
-        controller_backend: app.controller.backend.plugin.customer_services.administration
-        form:
-            type: app_customer_service
-        templates:
-            "::Theme\\Sterling\\Plugin\\CustomerServices\\Item\\standard.html.twig": "template.standard"
+    customer_service_overview_class: "AppBundle\\Entity\\CustomerServiceOverview" 
+    customer_service_class: "AppBundle\\Entity\\CustomerService"
+    customer_service_reference_class: "AppBundle\\Entity\\CustomerServiceReference"
+    customer_service_overview_controller_backend: app.controller.backend.plugin.customer_service_overview
+    customer_service_controller_backend: app.controller.backend.plugin.customer_service
+    customer_service_overview_form: 
+        type: app_customer_service_overview
+    customer_service_form: 
+        type: app_customer_service
+    customer_service_overview_templates:
+        "::Theme\\Sterling\\Plugin\\CustomerService\\Overview\\standard.html.twig": "template.standard"
+    customer_service_templates:
+        "::Theme\\Sterling\\Plugin\\CustomerService\\Item\\standard.html.twig": "template.standard"
             
-neutron_team_member: 
+neutron_team_member:  
     enable: true
     team_member_overview_class: "AppBundle\\Entity\\TeamMemberOverview" 
     team_member_reference_class: "AppBundle\\Entity\\TeamMemberReference" 
     team_member_class: "AppBundle\\Entity\\TeamMember" 
+    team_member_overview_controller_backend: "app.controller.backend.plugin.team_member_overview"
     team_member_overview_templates:
         "::Theme\\Sterling\\Plugin\\TeamMember\\Overview\\standard.html.twig": "template.standard"
-
+    team_member_overview_form:
+        type: app_team_member_overview
+    team_member_form:
+        type: app_team_member
     
 neutron_block_text:
     enable: true
@@ -322,3 +314,6 @@ avalanche_imagine:
         CustomerServiceImage_thumb:
             type:    thumbnail
             options: { size: [670, 321], mode: outbound, quality: 80 }
+        TeamMemberImage_thumb:
+            type:    thumbnail
+            options: { size: [140, 105], mode: outbound, quality: 80 }

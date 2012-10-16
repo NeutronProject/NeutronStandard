@@ -67,7 +67,7 @@ class CalloutBoxTypeEventSubscriber implements EventSubscriberInterface
      * @return void
      */
     public function preSetData(DataEvent $event)
-    {  
+    {   return;
         $data = $event->getData();
         $form = $event->getForm();
         
