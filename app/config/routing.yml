@@ -87,6 +87,14 @@ neutron_social_networks:
 neutron_block_text:
     resource: "@NeutronBlockTextBundle/Resources/config/routing.xml"
     prefix:   /admin/widget/block-text
+    
+neutron_zend:
+    resource: "@NeutronZendBundle/Resources/config/routing.xml"
+    prefix:   /
+
+neutron_contact:
+    resource: "@NeutronContactBundle/Resources/config/routing.xml"
+    prefix:   /
  
 # Internal routing configuration to handle ESI
 #_internal:

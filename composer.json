@@ -4,6 +4,12 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "repositories": [
+	    {
+	        "type": "composer",
+	        "url": "http://packages.zendframework.com/"
+	    }
+	],
     "require": {
    	    "php": ">=5.3.3",
         "symfony/symfony": "2.1.*",
@@ -25,7 +31,8 @@
         "knplabs/knp-paginator-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "*",
         "imagine/Imagine": "dev-master",
-        "avalanche123/imagine-bundle": "dev-master"
+        "avalanche123/imagine-bundle": "dev-master",
+        "zendframework/zend-http": "2.0.*"
         
     },
     "scripts": {

@@ -65,6 +65,8 @@ doctrine:
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberOverviewInterface: AppBundle\Entity\TeamMemberOverview
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberReferenceInterface: AppBundle\Entity\TeamMemberReference
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberInterface: AppBundle\Entity\TeamMember
+            Neutron\Plugin\ContactBundle\Model\ContactInterface: AppBundle\Entity\Contact
+            Neutron\Plugin\ContactBundle\Model\ContactFormInterface: AppBundle\Entity\ContactForm
         entity_managers:
             default:
                 connection: default
@@ -182,6 +184,9 @@ neutron_form:
     input_limiter:
         path_js: "jquery/plugins/jquery-inputlimiter/jquery.inputlimiter.1.2.3.min.js"
         path_css: "jquery/plugins/jquery-inputlimiter/jquery.inputlimiter.1.0.css"
+    recaptcha:
+        public_key: 6Leu0dcSAAAAAB4kNXDhzs31du1flS_AJTIAU95-
+        private_key: 6Leu0dcSAAAAAFT-gvi8s8seI128vKzqRNy2sdwn
     tinymce: 
         tiny_mce_jquery_path_js: "jquery/plugins/tinymce/jscripts/tiny_mce/jquery.tinymce.js"
         tiny_mce_path_js: "jquery/plugins/tinymce/jscripts/tiny_mce/tiny_mce.js"
@@ -287,6 +292,24 @@ neutron_social_networks:
         panel_aware: true
         allowed_panels:
             - page_panel_sidebar_right
+            
+neutron_contact: 
+    enable: true
+    mail_recipients: ["azazen09@gmail.com"]
+    mail_templates:
+           "::Theme\\Sterling\\Plugin\\Contact\\Mail\\standard.html.twig": "template.standard"
+    contact: 
+        class: AppBundle\Entity\Contact
+        controller_backend: app.controller.backend.plugin.contact
+        form:
+            type: app_backend_contact
+        templates:
+            "::Theme\\Sterling\\Plugin\\Contact\\standard.html.twig": "template.standard"
+    contact_form: 
+        class: AppBundle\Entity\ContactForm
+        form_choices:
+            "app_frontend_contact_standard": "form.standard"
+
   
 jms_translation:
     configs:
@@ -317,3 +340,6 @@ avalanche_imagine:
         TeamMemberImage_thumb:
             type:    thumbnail
             options: { size: [140, 105], mode: outbound, quality: 80 }
+        ContactImage_thumb:
+            type:    thumbnail
+            options: { size: [650, 169], mode: outbound, quality: 80 }

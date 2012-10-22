@@ -1,0 +1,42 @@
+{% form_theme form with '::Theme\\Sterling\\Form\\form_theme.html.twig' %}
+
+<div id="messages"></div>
+
+<form action="{{ path('neutron_contact.frontend.contact.handle', {'formType': 'app_frontend_contact_standard'}) }}" class="" {{ form_enctype(form) }} method="POST">
+
+    <fieldset>
+       
+        <label for="{{ form.name.vars.id }}"><span>*</span> {{ form.name.vars.label|trans({}, 'AppBundle') }}</label>
+        {{ form_widget(form.name, {'attr': {'size': 30}}) }}
+        <br>
+        
+        <label for="{{ form.email.vars.id }}"><span>*</span> {{ form.email.vars.label|trans({}, 'AppBundle') }}</label>
+        {{ form_widget(form.email, {'attr': {'size': 30}}) }}
+        <br>
+        
+        <label for="{{ form.content.vars.id }}"><span>*</span> {{ form.content.vars.label|trans({}, 'AppBundle') }}</label>
+        {{ form_widget(form.content, {'attr': {'size': 30}}) }}
+        <br>
+        
+        {{ form_row(form.recaptcha) }}
+        <br><br>
+        
+        <button id="submit-contact-form" type="submit" class="submit tt-form-submit">form.submit</button>
+        
+    </fieldset>
+
+</form>
+
+<div id="message-form-success" style="display:none;">
+    <div class="notification success closeable" style="cursor: pointer;">
+        <p style="font-size:12px;"> <strong>{% trans from 'AppBundle' %}form.contact.success{% endtrans %}!</strong> __MSG__</p>
+    </div>
+</div>
+
+<div id="message-form-invalid" style="display:none;">
+    <div class="notification error closeable" style="cursor: pointer;">
+        <p style="font-size:12px;"> <strong>{% trans from 'AppBundle' %}form.contact.error{% endtrans %}!</strong> {% trans from 'AppBundle' %}form.contact.error.description{% endtrans %}</p>
+    </div>
+</div>
+
+<div id="block-ui-message" style="display:none"><h3><img src="{{ site_url }}files/images/ajax-loader.gif" /> {{ 'form.message.blockui'|trans({}, 'AppBundle') }}</h3></div>

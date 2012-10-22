@@ -43,7 +43,6 @@ class Page extends AbstractPage
      */
     protected $layout;
     
-
     public function setHeadingText($text)
     {
         $this->headingText = (string) $text;

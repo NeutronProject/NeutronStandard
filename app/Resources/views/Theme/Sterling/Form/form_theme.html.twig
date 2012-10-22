@@ -1,0 +1,17 @@
+{% block neutron_recaptcha_row %}
+{% spaceless %}
+<div>
+    <label for="{{ id }}"><span>*</span> {{ label|trans({}, 'AppBundle') }}</label>
+
+    <div id="{{ id }}" style="display: none;"></div>
+
+    <span class="neutron-recaptcha" style="display:none">
+        {{ configs|merge({'id': id, 'lang': app.request.locale})|json_encode|raw }}
+    </span>
+</div>
+{% endspaceless %}
+{% endblock neutron_recaptcha_row %}
+
+
+
+
