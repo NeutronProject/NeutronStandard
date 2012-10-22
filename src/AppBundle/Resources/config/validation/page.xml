@@ -37,14 +37,6 @@
                 </option>
             </constraint>
         </property>
-        
-        <property name="recaptcha">
-        	<constraint name="Neutron\Bundle\FormBundle\Validator\Constraint\Recaptcha">
-                <option name="groups">
-                    <value>default</value>
-                </option>
-            </constraint>
-        </property>
     
     </class>
     

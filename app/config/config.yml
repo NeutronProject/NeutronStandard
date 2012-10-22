@@ -297,7 +297,7 @@ neutron_contact:
     enable: true
     mail_recipients: ["azazen09@gmail.com"]
     mail_templates:
-           "::Theme\\Sterling\\Plugin\\Contact\\Mail\\standard.html.twig": "template.standard"
+           "AppBundle:Frontend\\Mailer\\Contact:standard.html.twig": "template.standard"
     contact: 
         class: AppBundle\Entity\Contact
         controller_backend: app.controller.backend.plugin.contact
@@ -309,6 +309,9 @@ neutron_contact:
         class: AppBundle\Entity\ContactForm
         form_choices:
             "app_frontend_contact_standard": "form.standard"
+    contact_info: 
+        class: AppBundle\Entity\ContactInfo
+
 
   
 jms_translation:

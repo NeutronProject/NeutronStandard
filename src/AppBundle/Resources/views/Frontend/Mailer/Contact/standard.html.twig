@@ -1,0 +1,7 @@
+{% block body_html %}
+{% autoescape false %}
+    <p>{% trans from 'AppBundle' %}form.name{% endtrans %}: {{ name }} </p>
+    <p>{% trans from 'AppBundle' %}form.email{% endtrans %}: {{ email }} </p>
+    <p>{% trans from 'AppBundle' %}form.content{% endtrans %}: {{ content }} </p>
+{% endautoescape %}
+{% endblock %}

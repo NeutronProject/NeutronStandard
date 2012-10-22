@@ -2,7 +2,7 @@
 
 <div id="messages"></div>
 
-<form action="{{ path('neutron_contact.frontend.contact.handle', {'formType': 'app_frontend_contact_standard'}) }}" class="" {{ form_enctype(form) }} method="POST">
+<form action="{{ app.request.requestUri }}" class="" {{ form_enctype(form) }} method="POST">
 
     <fieldset>
        
