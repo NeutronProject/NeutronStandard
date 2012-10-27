@@ -40,6 +40,7 @@ class ContentType extends BaseType
        
        $builder
            ->add('image', 'neutron_image_upload', array(
+               'label' => 'form.image',
                'data_class' => 'AppBundle\Entity\ContactImage',
                'configs' => array(
                    'minWidth' => 650,

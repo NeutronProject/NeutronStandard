@@ -31,7 +31,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ ]
+    bundles:        ["AppBundle"]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -67,6 +67,9 @@ doctrine:
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberInterface: AppBundle\Entity\TeamMember
             Neutron\Plugin\ContactBundle\Model\ContactInterface: AppBundle\Entity\Contact
             Neutron\Plugin\ContactBundle\Model\ContactFormInterface: AppBundle\Entity\ContactForm
+            Neutron\Plugin\ContactBundle\Model\ContactInfoInterface: AppBundle\Entity\ContactInfo
+            Neutron\Plugin\ContactBundle\Model\ContactInfoReferenceInterface: AppBundle\Entity\ContactInfoReference
+            Neutron\Plugin\ContactBundle\Model\WidgetContactInfoInterface: AppBundle\Entity\WidgetContactInfo
         entity_managers:
             default:
                 connection: default
@@ -304,13 +307,20 @@ neutron_contact:
         form:
             type: app_backend_contact
         templates:
-            "::Theme\\Sterling\\Plugin\\Contact\\standard.html.twig": "template.standard"
-    contact_form: 
+            "AppBundle:Frontend\\Plugin\\Contact:standard.html.twig": "template.standard"
+    widget_contact_form: 
+        enable: true
         class: AppBundle\Entity\ContactForm
         form_choices:
             "app_frontend_contact_standard": "form.standard"
+        templates:
+            "AppBundle:Frontend\\Plugin\\Contact\\ContactForm:contact_standard.html.twig": "template.standard"
     contact_info: 
         class: AppBundle\Entity\ContactInfo
+        widget_class: AppBundle\Entity\WidgetContactInfo
+        reference_class: AppBundle\Entity\ContactInfoReference
+        widget_templates:
+            "::Theme\\Sterling\\Plugin\\Contact\\WidgetContactInfo\\standard.html.twig": "template.standard"
 
 
   

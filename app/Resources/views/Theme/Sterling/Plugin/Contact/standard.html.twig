@@ -49,7 +49,7 @@
 
 {% block right_sidebar %}
  <aside class="sidebar right-sidebar">
-   
+     {% render 'neutron_contact.controller.frontend.widget_contact_info:renderAction' with {'widget': entity.widgetContactInfo} %}
  </aside>
 {% endblock %}
 
