@@ -8,7 +8,6 @@
         <parameter key="app.controller.backend.plugin.contact.class">AppBundle\Controller\Backend\Plugin\Contact\ContactController</parameter>
         <parameter key="app.form.backend.type.contact.class">AppBundle\Form\Backend\Type\ContactType</parameter>
         <parameter key="app.form.backend.type.contact.content.class">AppBundle\Form\Backend\Type\Contact\ContentType</parameter>
-        <parameter key="app.form.frontend.type.contact.class">AppBundle\Form\Frontend\Type\ContactType</parameter>
     </parameters>
 
     <services>
@@ -31,18 +30,6 @@
 			parent="neutron_contact.form.backend.type.contact.content"
 		>
             <tag name="form.type" alias="app_backend_contact_content" />
-		</service>
-		
-		<service id="app.form.frontend.type.contact" 
-			class="%app.form.frontend.type.contact.class%"
-			scope="request"
-		>
-			<argument type="service" id="neutron_assetic" />
-			<call method="setTranslationDomain">
-				<argument>AppBundle</argument>
-			</call>
-			
-            <tag name="form.type" alias="app_frontend_contact_standard" />
 		</service>
 		
     </services>

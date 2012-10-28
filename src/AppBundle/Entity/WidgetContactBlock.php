@@ -9,16 +9,16 @@
 */
 namespace AppBundle\Entity;
 
-use Neutron\Plugin\ContactBundle\Entity\AbstractWidgetContactInfo;
+use Neutron\Widget\ContactBlockBundle\Entity\AbstractWidgetContactBlock;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="widget_contact_info")
- * @ORM\Entity
+ * @ORM\Table(name="widget_contact_block")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\WidgetContactBlockRepository")
  * 
  */
-class WidgetContactInfo extends AbstractWidgetContactInfo
+class WidgetContactBlock extends AbstractWidgetContactBlock
 {}

@@ -66,10 +66,10 @@ doctrine:
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberReferenceInterface: AppBundle\Entity\TeamMemberReference
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberInterface: AppBundle\Entity\TeamMember
             Neutron\Plugin\ContactBundle\Model\ContactInterface: AppBundle\Entity\Contact
-            Neutron\Plugin\ContactBundle\Model\ContactFormInterface: AppBundle\Entity\ContactForm
-            Neutron\Plugin\ContactBundle\Model\ContactInfoInterface: AppBundle\Entity\ContactInfo
-            Neutron\Plugin\ContactBundle\Model\ContactInfoReferenceInterface: AppBundle\Entity\ContactInfoReference
-            Neutron\Plugin\ContactBundle\Model\WidgetContactInfoInterface: AppBundle\Entity\WidgetContactInfo
+            Neutron\Widget\ContactFormBundle\Model\ContactFormInterface: AppBundle\Entity\ContactForm
+            Neutron\Widget\ContactBlockBundle\Model\ContactBlockInterface: AppBundle\Entity\ContactBlock
+            Neutron\Widget\ContactBlockBundle\Model\ContactBlockReferenceInterface: AppBundle\Entity\ContactBlockReference
+            Neutron\Widget\ContactBlockBundle\Model\WidgetContactBlockInterface: AppBundle\Entity\WidgetContactBlock
         entity_managers:
             default:
                 connection: default
@@ -298,31 +298,34 @@ neutron_social_networks:
             
 neutron_contact: 
     enable: true
+    class: AppBundle\Entity\Contact
+    controller_backend: app.controller.backend.plugin.contact
+    form:
+        type: app_backend_contact
+    templates:
+        "AppBundle:Frontend\\Plugin\\Contact:standard.html.twig": "template.standard"
+
+
+neutron_contact_form:
+    enable: true
+    class: AppBundle\Entity\ContactForm
+    form_types:
+        "app_frontend_contact_standard": "form.standard"
     mail_recipients: ["azazen09@gmail.com"]
     mail_templates:
-           "AppBundle:Frontend\\Mailer\\Contact:standard.html.twig": "template.standard"
-    contact: 
-        class: AppBundle\Entity\Contact
-        controller_backend: app.controller.backend.plugin.contact
-        form:
-            type: app_backend_contact
-        templates:
-            "AppBundle:Frontend\\Plugin\\Contact:standard.html.twig": "template.standard"
-    widget_contact_form: 
-        enable: true
-        class: AppBundle\Entity\ContactForm
-        form_choices:
-            "app_frontend_contact_standard": "form.standard"
-        templates:
-            "AppBundle:Frontend\\Plugin\\Contact\\ContactForm:contact_standard.html.twig": "template.standard"
-    contact_info: 
-        class: AppBundle\Entity\ContactInfo
-        widget_class: AppBundle\Entity\WidgetContactInfo
-        reference_class: AppBundle\Entity\ContactInfoReference
-        widget_templates:
-            "::Theme\\Sterling\\Plugin\\Contact\\WidgetContactInfo\\standard.html.twig": "template.standard"
+        "AppBundle:Frontend\\Widget\\ContactForm\\Mailer:standard.html.twig": "template.standard"
+    templates:
+        "AppBundle:Frontend\\Widget\\ContactForm:standard.html.twig": "template.standard"
 
-
+neutron_contact_block:
+    enable: true
+    widget:
+        class: AppBundle\Entity\WidgetContactBlock
+        reference_class: AppBundle\Entity\ContactBlockReference
+        templates:
+            "AppBundle:Frontend\\Widget\\ContactBlock:widget_standard.html.twig": "template.standard"
+    block:
+        class: AppBundle\Entity\ContactBlock
   
 jms_translation:
     configs:

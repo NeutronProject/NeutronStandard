@@ -51,7 +51,7 @@
        
        {{ entity.content|raw }}
        
-        {% render 'neutron_contact.controller.frontend.contact_form:renderAction' with {'widget': entity.contactForm} %}
+        {% render 'neutron_contact_form.controller.frontend.contact_form:renderAction' with {'widget': entity.contactForm} %}
                       
     </article>
  </div>		
@@ -60,7 +60,7 @@
 
 {% block right_sidebar %}
  <aside class="sidebar right-sidebar">
-     {% render 'neutron_contact.controller.frontend.widget_contact_info:renderAction' with {'widget': entity.widgetContactInfo} %}
+     {% render 'neutron_contact_block.controller.frontend.widget_contact_block:renderAction' with {'widget': entity.widgetContactBlock} %}
  </aside>
 {% endblock %}
 

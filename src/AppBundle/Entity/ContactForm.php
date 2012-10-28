@@ -9,7 +9,7 @@
 */
 namespace AppBundle\Entity;
 
-use Neutron\Plugin\ContactBundle\Entity\AbstractContactForm;
+use Neutron\Widget\ContactFormBundle\Entity\AbstractContactForm;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 

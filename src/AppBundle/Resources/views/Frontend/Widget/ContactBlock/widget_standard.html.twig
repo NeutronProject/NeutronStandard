@@ -1,0 +1,15 @@
+{% for reference in widget.references %}
+<div class="sidebar-widget">
+   <p class="widget-heading">{{ reference.inversed.title }}</p>
+   <div class="contact_details">
+      <div class="contact_details_wrap">
+         <p class="address">{{ reference.inversed.address }}<br>{{ reference.inversed.city }}, {{ reference.inversed.postCode }}</p>
+         <p class="phone"><strong>{% trans from translationDomain%}label.phone{% endtrans %}:</strong> {{ reference.inversed.phone }}</p>
+         {% if reference.inversed.fax %}
+            <p class="fax"><strong>{% trans from translationDomain%}label.fax{% endtrans %}:</strong> {{ reference.inversed.fax }}</p>
+         {% endif %}
+         <p class="email"><strong>{% trans from translationDomain%}label.email{% endtrans %}:</strong> <a href="mailto:{{ reference.inversed.email }}">{{ reference.inversed.email }}</a></p>
+      </div>         
+   </div>
+</div>
+{% endfor %}

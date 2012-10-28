@@ -9,9 +9,9 @@
  */
 namespace AppBundle\Entity\Repository;
 
-use Neutron\Plugin\ContactBundle\Entity\Repository\ContactInfoRepository as BaseRepository;
+use Neutron\Widget\ContactBlockBundle\Entity\Repository\ContactBlockRepository as BaseRepository;
 
-class ContactInfoRepository extends BaseRepository
+class ContactBlockRepository extends BaseRepository
 {
 
 }

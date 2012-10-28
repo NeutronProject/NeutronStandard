@@ -36,7 +36,7 @@ class Contact extends AbstractContact
      */
     protected $layout;
     
-    public function setImage(ImageInterface $image)
+    public function setImage(ImageInterface $image = null)
     {
         $this->image = $image;
         return $this;
