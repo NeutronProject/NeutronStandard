@@ -25,6 +25,7 @@
 {% endblock %}
 
 {% block content %}
+<div id="main-wrap" class="clearfix">
 <div class="page_content">
  <div>
     <article>
@@ -41,13 +42,12 @@
     </article>
  </div>		
 </div>
-{% endblock %}
-
-{% block right_sidebar %}
  <aside class="sidebar right-sidebar">
     {{ neutron_panel_render(plugin.getPanel('page_panel_sidebar_right')) }}
  </aside>
+ </div>
 {% endblock %}
+
 
 {% block callout_box %}
      {% if page.layout.enableCalloutBox %}

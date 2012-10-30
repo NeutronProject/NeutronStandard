@@ -10,21 +10,21 @@
         	<constraint name="NotBlank">
                 <option name="message">headingText.blank</option>
                 <option name="groups">
-                    <value>page</value>
+                    <value>default</value>
                 </option>
             </constraint>
             <constraint name="MinLength">
                 <option name="limit">2</option>
                 <option name="message">headingText.short</option>
                 <option name="groups">
-                    <value>page</value>
+                    <value>default</value>
                 </option>
             </constraint>
             <constraint name="MaxLength">
                 <option name="limit">255</option>
                 <option name="message">headingText.long</option>
                 <option name="groups">
-                    <value>page</value>
+                    <value>default</value>
                 </option>
             </constraint>
         </property>
@@ -32,6 +32,8 @@
         <property name="pageImage">
         	<constraint name="Neutron\Bundle\FormBundle\Validator\Constraint\Image">
                 <option name="requiredMessage">image.blank</option>
+                <option name="metaRequiredMessage">image.meta_required</option>
+                <option name="validateMeta">true</option>
                 <option name="groups">
                     <value>none</value>
                 </option>

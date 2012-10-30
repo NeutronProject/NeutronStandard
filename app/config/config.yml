@@ -214,8 +214,8 @@ neutron_form:
         temporary_dir: "temp"
         file_autoclear: true
         older_than: 600
-        normalize_width: 1000
-        normalize_height: 1000
+        normalize_width: 800
+        normalize_height: 600
         max_uploaded_images: 20
         max_uploaded_files: 20
             
@@ -326,6 +326,16 @@ neutron_contact_block:
             "AppBundle:Frontend\\Widget\\ContactBlock:widget_standard.html.twig": "template.standard"
     block:
         class: AppBundle\Entity\ContactBlock
+        
+neutron_gallery:
+    enable: true
+    gallery_class: AppBundle\Entity\Gallery
+    image_class: AppBundle\Entity\GalleryImage
+    templates:
+          "AppBundle:Frontend\\Plugin\\Gallery:standard.html.twig": "template.standard"
+    image_options:
+        min_width: 197
+        min_height: 133
   
 jms_translation:
     configs:
@@ -359,3 +369,6 @@ avalanche_imagine:
         ContactImage_thumb:
             type:    thumbnail
             options: { size: [650, 169], mode: outbound, quality: 80 }
+        GalleryImage_thumb:
+            type:    thumbnail
+            options: { size: [197, 133], mode: outbound, quality: 80 }

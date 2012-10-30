@@ -1,0 +1,69 @@
+{% extends "::Theme/Sterling/layout.html.twig" %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+    
+    {% stylesheets 'jquery/plugins/colorbox/colorbox.css' filter='cssrewrite'%}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    
+    {% javascripts
+        'jquery/plugins/colorbox/jquery.colorbox-min.js'
+        '@AppBundle/Resources/public/frontend/plugin/gallery/init-colorbox.js'
+   %}
+       <script src="{{ asset_url }}"></script>
+   {% endjavascripts %}
+
+{% endblock %}
+
+{% block meta_title %}{{ neutron_seo_title(entity.seo) }}{% endblock %}
+{% block meta_keywords %}{{ neutron_seo_keywords(entity.seo) }}{% endblock %}
+{% block meta_description %}{{ neutron_seo_description(entity.seo) }}{% endblock %}
+
+{% block content %}
+
+{% set trans =  {
+    'current': 'image {current} of {total}'|trans({}, 'AppBundle'), 
+    'next': 'next'|trans({}, 'AppBundle'), 
+    'previous': 'previous'|trans({}, 'AppBundle'), 
+ } %}
+ 
+ <div id="gallery-outer-wrap" class="clearfix" data-trans="{{ trans|json_encode }}">
+    <div id="main-wrap" class="clearfix">
+       <div id="iso-wrap" class="clearfix iso-space">
+       {% for image in entity.images if image.isActive %}
+          <div data-id="id-{{ image.id }}" class="one_fourth isotope-item">
+             <div class="img-frame full-fourth">
+                <div class="lightbox-zoom">
+                   <a class="hover-item colorbox-item" href="{{ site_url~image.imagePath }}" rel="gallery", title="{{ image.title }}">
+                   {{ neutron_image(image, 'GalleryImage_thumb') }}
+                   </a>
+                </div>
+             </div>
+             <img src="{{ site_url }}content-images/sample-bio-4.png" alt="{{ image.title }}" width="197" height="133" style="display:none" />
+             
+             <h4>{{ image.title }}</h4>
+             <p>{{ image.description }}</p>
+          </div>
+       {% endfor %} 
+       </div>
+
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

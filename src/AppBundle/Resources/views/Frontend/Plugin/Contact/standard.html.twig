@@ -38,6 +38,7 @@
 {% endblock %}
 
 {% block content %}
+<div id="main-wrap" class="clearfix">
 <div class="page_content">
  <div>
     <article>
@@ -56,13 +57,12 @@
     </article>
  </div>		
 </div>
-{% endblock %}
-
-{% block right_sidebar %}
  <aside class="sidebar right-sidebar">
      {% render 'neutron_contact_block.controller.frontend.widget_contact_block:renderAction' with {'widget': entity.widgetContactBlock} %}
  </aside>
+ </div>
 {% endblock %}
+
 
 {% block callout_box %}
      {% if entity.layout.enableCalloutBox %}
