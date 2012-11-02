@@ -107,6 +107,10 @@ neutron_contact_form:
 neutron_gallery:
     resource: "@NeutronGalleryBundle/Resources/config/routing.xml"
     prefix:   /
+    
+neutron_show_case:
+    resource: "@NeutronShowCaseBundle/Resources/config/routing.xml"
+    prefix:   /
  
 # Internal routing configuration to handle ESI
 #_internal:

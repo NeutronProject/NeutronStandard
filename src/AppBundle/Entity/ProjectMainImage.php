@@ -16,15 +16,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="customer_service_image")
+ * @ORM\Table(name="project_main_image")
  * @ORM\Entity
  * 
  */
-class CustomerServiceImage extends AbstractImage
-{
-    
+class ProjectMainImage extends AbstractImage
+{  
     public function getUploadDir()
     {
-        return '/media/images/customer_service';
+        return '/media/images/project/main';
     }
 }

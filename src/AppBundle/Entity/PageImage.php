@@ -21,16 +21,7 @@ use Doctrine\ORM\Mapping as ORM;
  * 
  */
 class PageImage extends AbstractImage
-{
-    /**
-     * @var integer 
-     *
-     * @ORM\Id @ORM\Column(name="id", type="integer")
-     * 
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    protected $id;
-    
+{    
     public function getUploadDir()
     {
         return '/media/images/page';

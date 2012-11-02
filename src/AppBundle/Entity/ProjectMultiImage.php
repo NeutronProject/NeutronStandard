@@ -9,22 +9,23 @@
  */
 namespace AppBundle\Entity;
 
-use Neutron\Bundle\FormBundle\Entity\AbstractImage;
+use Neutron\Plugin\ShowCaseBundle\Model\ProjectImageInterface;
+
+use Neutron\Bundle\FormBundle\Entity\AbstractMultiImage;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="customer_service_image")
+ * @ORM\Table(name="project_image")
  * @ORM\Entity
  * 
  */
-class CustomerServiceImage extends AbstractImage
+class ProjectMultiImage extends AbstractMultiImage implements ProjectImageInterface
 {
-    
     public function getUploadDir()
     {
-        return '/media/images/customer_service';
+        return '/media/images/project';
     }
 }

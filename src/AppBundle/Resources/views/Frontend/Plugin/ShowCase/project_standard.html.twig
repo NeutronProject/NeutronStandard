@@ -1,0 +1,70 @@
+{% extends "::Theme/Sterling/layout.html.twig" %}
+
+{% block stylesheets %}
+
+    {{ parent() }}
+    
+    {% stylesheets 'bundles/app/frontend/plugin/show_case/css/slidesjs.css' filter='cssrewrite'%}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    
+
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+    
+    {% javascripts
+        'jquery/plugins/slidesjs/js/slides.min.jquery.js'
+        '@AppBundle/Resources/public/frontend/plugin/show_case/js/init-slidesjs.js'
+   %}
+       <script src="{{ asset_url }}"></script>
+   {% endjavascripts %}
+
+{% endblock %}
+
+{% block meta_title %}{{ neutron_seo_title(entity.seo) }}{% endblock %}
+{% block meta_keywords %}{{ neutron_seo_keywords(entity.seo) }}{% endblock %}
+{% block meta_description %}{{ neutron_seo_description(entity.seo) }}{% endblock %}
+
+{% block content %}
+
+<div id="main-wrap" class="clearfix">
+    <div class="two_thirds">
+    <h4>{% trans from 'AppBundle'%}show_case.project.gallery{% endtrans %}</h4>
+    <br/>
+    <div id="slides">
+        <div class="slides_container">
+        {% for image in entity.images %}
+            <div class="slide">
+                {{ neutron_image(image, 'ProjectImage_thumb') }}
+                <div class="caption" style="bottom:0"><p>{{ image.caption }}</p></div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+      
+    </div>
+    <div class="one_third">
+       <h4>{% trans from 'AppBundle'%}show_caseproject.description{% endtrans %}</h4>
+       {{ entity.content|raw }}
+       
+       <h4>{% trans from 'AppBundle' %}show_case.project.details{% endtrans %}</h4>
+       <p>{% trans %}show_case.project.client{% endtrans %}: <strong>{{ entity.clientName }}</strong></p>
+       <p>{% trans %}show_case.project.date{% endtrans %}: <strong>{{ entity.projectDate|date('M Y') }}</strong></p>
+       <p>{% trans %}show_case.project.url{% endtrans %}: <strong><a href="{{ entity.projectUrl}}" target="_blank">{{ entity.projectUrl}}</a></strong></p>
+    
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

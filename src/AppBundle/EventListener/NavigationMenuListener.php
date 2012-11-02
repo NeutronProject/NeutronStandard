@@ -27,7 +27,7 @@ class NavigationMenuListener
         
         $menuHeader->addChild('menu.home', array(
             'label' => 'Home',
-            'route' => 'neutron_mvc.distributor',
+            'route' => 'neutron_page.frontend.page',
             'routeParameters' => array('slug' => 'level-one')
         ));
         
@@ -48,7 +48,7 @@ class NavigationMenuListener
         
         $menuFooter->addChild('menu.home', array(
             'label' => 'Home',
-            'route' => 'neutron_mvc.distributor',
+            'route' => 'neutron_page.frontend.page',
             'routeParameters' => array('slug' => 'level-one')
         ));
         

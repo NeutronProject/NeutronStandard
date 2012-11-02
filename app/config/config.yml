@@ -70,6 +70,10 @@ doctrine:
             Neutron\Widget\ContactBlockBundle\Model\ContactBlockInterface: AppBundle\Entity\ContactBlock
             Neutron\Widget\ContactBlockBundle\Model\ContactBlockReferenceInterface: AppBundle\Entity\ContactBlockReference
             Neutron\Widget\ContactBlockBundle\Model\WidgetContactBlockInterface: AppBundle\Entity\WidgetContactBlock
+            Neutron\Plugin\ShowCaseBundle\Model\ShowCaseInterface: AppBundle\Entity\ShowCase
+            Neutron\Plugin\ShowCaseBundle\Model\ProjectInterface: AppBundle\Entity\Project
+            Neutron\Plugin\ShowCaseBundle\Model\ProjectReferenceInterface: AppBundle\Entity\ProjectReference
+            #Neutron\Plugin\ShowCaseBundle\Model\ProjectImageInterface: AppBundle\Entity\ProjectMultiImage
         entity_managers:
             default:
                 connection: default
@@ -238,7 +242,7 @@ neutron_page:
     form:
         type: "app_page"
     templates:
-        "::Theme\\Sterling\\Plugin\\Page\\right_sidebar.html.twig": "template.right_sidebar"
+        "AppBundle:Frontend\\Plugin\\Page:right_sidebar.html.twig": "template.right_sidebar"
         
 neutron_customer_service: 
     enable: true
@@ -252,9 +256,9 @@ neutron_customer_service:
     customer_service_form: 
         type: app_customer_service
     customer_service_overview_templates:
-        "::Theme\\Sterling\\Plugin\\CustomerService\\Overview\\standard.html.twig": "template.standard"
+        "AppBundle:Frontend\\Plugin\\CustomerService\\Overview:standard.html.twig": "template.standard"
     customer_service_templates:
-        "::Theme\\Sterling\\Plugin\\CustomerService\\Item\\standard.html.twig": "template.standard"
+        "AppBundle:Frontend\\Plugin\\CustomerService\\Item:standard.html.twig": "template.standard"
             
 neutron_team_member:  
     enable: true
@@ -263,7 +267,7 @@ neutron_team_member:
     team_member_class: "AppBundle\\Entity\\TeamMember" 
     team_member_overview_controller_backend: "app.controller.backend.plugin.team_member_overview"
     team_member_overview_templates:
-        "::Theme\\Sterling\\Plugin\\TeamMember\\Overview\\standard.html.twig": "template.standard"
+        "AppBundle:Frontend\\Plugin\\TeamMember\\Overview:standard.html.twig": "template.standard"
     team_member_overview_form:
         type: app_team_member_overview
     team_member_form:
@@ -285,7 +289,7 @@ neutron_block_text:
             - customer_services_panel_sidebar_right
     
 neutron_social_networks:
-    enable: true
+    enable: false
     social_network_class: AppBundle\Entity\SocialNetwork
     template: "::Theme\\Sterling\\Widget\\SocialNetworks\\index.html.twig"
     widget_options:
@@ -336,6 +340,26 @@ neutron_gallery:
     image_options:
         min_width: 197
         min_height: 133
+        
+neutron_show_case:
+    enable: true
+    show_case:
+        class: AppBundle\Entity\ShowCase
+        reference_class: AppBundle\Entity\ProjectReference
+        templates:
+              "AppBundle:Frontend\\Plugin\\ShowCase:show_case_standard.html.twig": "template.standard"
+    project:
+        class: AppBundle\Entity\Project
+        main_image_class: AppBundle\Entity\ProjectMainImage
+        image_class: AppBundle\Entity\ProjectMultiImage
+        templates:
+              "AppBundle:Frontend\\Plugin\\ShowCase:project_standard.html.twig": "template.standard"
+        main_image_options:
+            min_width: 197
+            min_height: 133
+        image_options:
+            min_width: 570
+            min_height: 270
   
 jms_translation:
     configs:
@@ -372,3 +396,9 @@ avalanche_imagine:
         GalleryImage_thumb:
             type:    thumbnail
             options: { size: [197, 133], mode: outbound, quality: 80 }
+        ProjectMainImage_thumb:
+            type:    thumbnail
+            options: { size: [197, 133], mode: outbound, quality: 80 }
+        ProjectImage_thumb:
+            type:    thumbnail
+            options: { size: [570, 270], mode: outbound, quality: 80 }

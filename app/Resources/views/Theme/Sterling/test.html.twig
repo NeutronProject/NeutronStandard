@@ -1,38 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
- 
-        <title>{% block meta_title %}{{ neutron_seo_title() }}{% endblock %}</title>
-        
-        {% block stylesheets %}
-            {% do neutron_prepend_stylesheet('themes/sterling/css/primary-blue.css') %}
-            {% do neutron_prepend_stylesheet('themes/sterling/css/_mobile.css') %}
-            {% do neutron_prepend_stylesheet('themes/sterling/css/_style.css') %}
-
-            {{ neutron_stylesheet_render() }} 
-            
-            <!--[if lt IE 9]>
-                <link rel="stylesheet" href="{{ site_url }}themes/sterling/css/IE.css" />
-            <![endif]-->
-        {% endblock %}
-        
-        {% block javascripts %}
-
-            {% do neutron_prepend_javascript('jquery/js/jquery.js')  %}
-            {% do neutron_append_javascript('themes/sterling/js/custom-main.js') %}
-            
-            {{ neutron_javascript_render() }}
-
-            <!--[if lt IE 9]>
-                <link rel="stylesheet" href="{{ site_url }}themes/sterling/css/IE.css" />
-            <![endif]-->
-            <!--[if lte IE 8]>
-                <script type="text/javascript" src="{{ site_url }}themes/sterling/js/IE.js"></script>
-            <![endif]-->
-
-        {% endblock %}
-    </head>
    <body>
-
+        test
    </body>
 </html>
