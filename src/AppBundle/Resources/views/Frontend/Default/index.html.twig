@@ -1,2 +1,161 @@
-{% extends "::Theme/Sterling/layout.html.twig" %}
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+        <meta name="robots" content="{{ neutron_settings_get('robots') }}" />
+        <meta name="Author" content="{{ neutron_settings_get('author') }}" />
+        <meta name="Language" content="{{ app.request.locale }}"/>
+        <meta name="Copyright" content="{{ neutron_settings_get('copyright') }}" />
+        <meta name="Publisher" content="{{ neutron_settings_get('publisher') }}" />
+        <meta name="Description" content=" {% block meta_description %}{{ neutron_seo_description() }}{% endblock %} " />
+        <meta name="Keywords" content="{% block meta_keywords %}{{ neutron_seo_keywords() }}{% endblock %} " />
+        
+        <title>{% block meta_title %}{{ neutron_seo_title() }}{% endblock %}</title>
+        
+        {% block stylesheets %}
+                    
+            {% stylesheets 'bundles/app/frontend/css/*' 
+                filter="cssrewrite"
+                output='temp/compiled/js/main.css' %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+            
+            <!--[if lt IE 9]>
+                <link rel="stylesheet" href="{{ site_url }}bundles/app/frontend/css/IE.css" />
+            <![endif]-->
+        {% endblock %}
+        
+        {% block javascripts %}
 
+            {% javascripts
+                'jquery/js/jquery.js'
+                '@AppBundle/Resources/public/frontend/js/*'
+                'jquery/plugins/slidesjs/js/slides.min.jquery.js'
+                '@AppBundle/Resources/public/frontend/slider/init-slider.js'
+                output='temp/compiled/js/main.js'
+           %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+            
+            <!--[if lte IE 8]>
+                <script type="text/javascript" src="{{ site_url }}bundles/app/frontend/js/IE.js"></script>
+            <![endif]-->
+
+        {% endblock %}
+    </head>
+   <body>
+      <!-- START Top-Toolbar -->
+      <aside class="top-aside clearfix">
+         <div class="center-wrap">
+         
+            <div class="one_half">
+               <div class="sidebar-widget">
+                  {% set menu_header = knp_menu_get('NeutronMvcBundle:Navigation:main', ['menu.header'])%}
+                  {{ 
+                    knp_menu_render(menu_header, {
+                    'depth': 1,
+                    'ancestorClass': '',
+                    'currentClass': 'current-menu-item',
+                    'firstClass': '',
+                    'lastClass': ''
+                  })
+                }}      
+               </div>
+            </div>
+ 
+   
+            <div class="one_half"> 
+               <div class="sidebar-widget"> 
+              {% set languages = neutron_language_get()  %}
+              {% if languages|length > 0 %}
+                  <ul class="custom-menu">
+                      {% for key, language in languages %}
+                         <li><a href="{{ path('frontend_home', {'_locale': key}) }}">{{ language }}</a></li>
+                     {% endfor %}
+                  </ul>
+               {% endif %}
+               </div>
+            </div>
+            
+         </div>
+         <!-- END center-wrap -->
+         <div class="top-aside-shadow"></div>
+      </aside>
+      <!-- END Top-Toolbar -->
+      
+      <!-- START Header -->
+      <header>
+         <div class="center-wrap">
+            <div class="companyIdentity">
+               <a href="#"><img src="{{ site_url }}themes/sterling/content-images/sterling-logo.png" alt="Website Template" /></a>
+            </div>
+            <nav>
+                
+                {% set navigation = knp_menu_get('NeutronMvcBundle:Navigation:main') %}
+                {{ 
+                    knp_menu_render(navigation, {
+                    'template': '::Theme\\Sterling\\Menu\\navigation.html.twig',
+                    'depth': 3,
+                    'ancestorClass': 'current-menu-ancestor current-menu-parent',
+                    'currentClass': 'current-menu-item',
+                    'firstClass': '',
+                    'lastClass': '',
+                    'attributes': {'class': 'sub-menu'}
+                  })
+              }}
+            </nav>        
+         </div>
+    </header> 
+        
+
+{% render "app.controller.frontend.slider:indexAction" %}
+
+ <section id="content-container" class="clearfix"></section>
+
+{% block callout_box %}{% endblock %}
+      
+          <footer>
+             <div class="center-wrap tt-relative">
+                <div class="footer-content clearfix">
+                
+                   <div class="footer-default-one">
+                      {% block footer_text %}{% endblock %}
+                   </div>
+
+                   <div class="footer-default-two">
+                       {% block footer_widget_mailing_list %}{% endblock %}
+                   </div>
+
+                   <div class="footer-default-three">
+                     {% block footer_widget_social_list %}{% endblock %}
+                   </div>
+                </div>
+             </div>
+             <!-- END center-wrap -->
+             <div class="footer-copyright clearfix">
+                <div class="center-wrap clearfix">
+                   <div class="foot-copy">
+                      <p>{% trans from "appBundle" %}layout.copyright{% endtrans %}</p>
+                   </div>
+                   <!-- END foot-copy -->
+                   <a href="top#" id="scroll_to_top" class="link-top">{% trans from "appBundle" %}layout.scroll_top{% endtrans %}</a>
+                   {% set menu_footer = knp_menu_get('NeutronMvcBundle:Navigation:main', ['menu.footer'])%}
+                    {{ 
+                        knp_menu_render(menu_footer, {
+                        'depth': 1,
+                        'ancestorClass': '',
+                        'currentClass': 'current-menu-item',
+                        'firstClass': '',
+                        'lastClass': ''
+                      })
+                    }} 
+                </div>
+                <!-- END center-wrap -->
+             </div>
+             <!-- END footer-copyright -->	
+             <div class="shadow top"></div>
+             <div class="tt-overlay"></div>
+        </footer>
+   </body>
+</html>

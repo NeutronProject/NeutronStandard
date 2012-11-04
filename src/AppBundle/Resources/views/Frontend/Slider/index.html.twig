@@ -1,0 +1,30 @@
+<section class="banner-slider">
+ <div class="center-wrap">
+ 
+    <div id="slides">
+        <div class="slides_container">
+            {% for slide in slides %}
+                <div class="clearfix home-slider-post">
+                
+                     <div class="one_half">
+                        <div class="img-frame full-half">{{ neutron_image(slide.image, 'SliderImage_thumb') }}</div>
+                     </div>
+                     
+                     <div class="one_half">
+                        <h2>{{ slide.title }}</h2>
+                        <p>{{ slide.content }}</p>
+                        {% if slide.btnEnabled %}
+                            <p><a href="{{ slide.btnUrl }}" target="{{ slide.btnTarget }}" class="small green button"  title="{{ slide.btnLabel }}">{{ slide.btnLabel }} &rarr; </a></p>
+                        {% endif %}
+                     </div>
+                </div>
+            {% endfor %}
+        </div>
+    
+    </div>
+</div>
+<div class="shadow top"></div>
+<div class="shadow bottom"></div>
+<div class="tt-overlay"></div>
+</section>
+    

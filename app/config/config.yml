@@ -402,3 +402,6 @@ avalanche_imagine:
         ProjectImage_thumb:
             type:    thumbnail
             options: { size: [570, 270], mode: outbound, quality: 80 }
+        SliderImage_thumb:
+            type:    thumbnail
+            options: { size: [445, 273], mode: outbound, quality: 80 }

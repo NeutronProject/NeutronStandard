@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+
+    <parameters>
+        <parameter key="app.slider_manager.class">AppBundle\Doctrine\SliderManager</parameter>
+        <parameter key="app.slider.slider_class">AppBundle\Entity\Slider</parameter>
+        <parameter key="app.controller.backend.slider.class">AppBundle\Controller\Backend\SliderController</parameter>
+        <parameter key="app.controller.frontend.slider.class">AppBundle\Controller\Frontend\SliderController</parameter>
+        <parameter key="app.form.backend.name.slider">app_backend_slider</parameter>
+        <parameter key="app.form.backend.type.slider">app_backend_slider</parameter>
+        <parameter key="app.form.backend.type.slider.class">AppBundle\Form\Backend\Type\SliderType</parameter>
+        <parameter key="app.form.backend.handler.slider.class">AppBundle\Form\Backend\Handler\SliderHandler</parameter>
+        <parameter key="app.datagrid.builder.slider_management.class">AppBundle\DataGrid\SliderManagementDataGrid</parameter>
+        <parameter key="app.event_listener.slider_datagrid_row_position_change_listener.class">AppBundle\EventListener\SliderDataGridRowPositionChangeListener</parameter>
+    </parameters>
+
+    <services>
+    
+        <service id="app.slider_manager" 
+        	class="%app.slider_manager.class%"
+        >       	
+            <call method="setClassName">
+            	<argument>%app.slider.slider_class%</argument>
+            </call>
+            <call method="setObjectManager">
+            	<argument type="service" id="object_manager" />
+            </call>
+        </service>
+        
+        <service id="app.controller.backend.slider" 
+      		class="%app.controller.backend.slider.class%"
+        >	
+ 			<call method="setContainer">
+            	<argument type="service" id="service_container" />
+            </call>    
+        </service>
+        
+        <service id="app.controller.frontend.slider" 
+      		class="%app.controller.frontend.slider.class%"
+        >	
+ 			<call method="setContainer">
+            	<argument type="service" id="service_container" />
+            </call>    
+        </service>
+        
+        <service id="app.form.backend.slider" factory-method="createNamed" factory-service="form.factory" class="Symfony\Component\Form\Form">
+            <argument>%app.form.backend.name.slider%</argument>
+            <argument>%app.form.backend.type.slider%</argument>
+        </service>
+        
+        <service id="app.form.backend.type.slider" class="%app.form.backend.type.slider.class%">
+			<call method="setSliderClass">
+				<argument>%app.slider.slider_class%</argument>
+			</call>
+            <tag name="form.type" alias="app_backend_slider" />
+		</service>
+		
+		<service id="app.form.backend.handler.slider" 
+        	class="%app.form.backend.handler.slider.class%"
+        >
+        	<call method="setContainer">
+        		<argument type="service" id="service_container" />
+        	</call>
+        	<call method="setForm">
+        		<argument type="service" id="app.form.backend.slider" />
+        	</call>
+        	<call method="setTranslationDomain">
+        		<argument>AppBundle</argument>
+        	</call>
+        </service>
+        
+        <service id="app.datagrid.builder.slider_management" 
+        	class="%app.datagrid.builder.slider_management.class%"
+        	scope="request"
+       	>
+        	<argument type="service" id="neutron_data_grid.factory" />
+        	<argument type="service" id="translator" />
+        	<argument type="service" id="router" />
+        	<argument type="service" id="app.slider_manager" />
+        	<argument>AppBundle</argument>
+        </service>
+        
+        <service id="app.datagrid.slider_management" 
+        	class="Neutron\Bundle\DataGridBundle\DataGrid\DataGrid"
+        	factory-service="app.datagrid.builder.slider_management"
+        	factory-method="build"
+        >
+        	<tag name="neutron_data_grid.datagrid" alias="app_slider_management" />
+        </service>
+        
+        <service id="app.event_listener.slider_datagrid_row_position_change_listener" 
+        	class="%app.event_listener.slider_datagrid_row_position_change_listener.class%">
+       	    <argument type="service" id="app.slider_manager" />
+       	    <tag name="kernel.event_listener" event="neutron_datagrid.onRowPositionChange" method="onRowPositionChange"/>
+        </service>
+        
+    </services>
+
+</container>

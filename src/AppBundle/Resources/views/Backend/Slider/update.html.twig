@@ -1,0 +1,30 @@
+{% extends "NeutronAdminBundle::layout.html.twig" %}
+
+{% block headTitle %} {% trans from translationDomain %}head_title{% endtrans %} {% endblock %}
+
+{% block headDesc %}
+    <h1 class="icon dashboard">
+        {% trans from translationDomain %}header{% endtrans %} 
+        <small>{% trans from translationDomain %}header.description{% endtrans %}</small>
+    </h1>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+	<div class="grid12">
+		<article class="panel">
+		 	<header>
+		 	    <h2>{% trans from translationDomain %}subheader{% endtrans %}</h2>
+		 	</header>
+            {{ neutron_form(
+                  form, 
+                {'submit_label': 'form.save', 'translation_domain': translationDomain},
+                {
+                    'back': {'label': 'form.back', 'style': 'btn action', 'url': path('app.backend.slider')},
+                }
+           ) }}
+		</article>
+
+	</div>
+</div>
+{% endblock %}
