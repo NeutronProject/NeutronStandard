@@ -32,7 +32,8 @@
         "friendsofsymfony/user-bundle": "*",
         "imagine/Imagine": "dev-master",
         "avalanche123/imagine-bundle": "dev-master",
-        "zendframework/zend-http": "2.0.*"
+        "zendframework/zend-http": "2.0.*",
+        "exercise/elastica-bundle": "dev-master"
         
     },
     "scripts": {

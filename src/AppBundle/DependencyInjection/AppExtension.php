@@ -24,7 +24,7 @@ class AppExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         
-        foreach (array('services', 'slider', 'plugin/page', 'plugin/customer_service', 'plugin/team_member', 'plugin/contact', 'widget/contact_form') as $basename) {
+        foreach (array('services','home', 'slider','layout', 'plugin/page', 'plugin/customer_service', 'plugin/team_member', 'plugin/contact', 'widget/contact_form') as $basename) {
             $loader->load(sprintf('%s.xml', $basename));
         }
     }

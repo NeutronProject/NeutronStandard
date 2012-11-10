@@ -40,40 +40,9 @@ class DefaultController extends Controller
 
     public function indexAction()
     {    
+
     	return $this->render('AppBundle:Backend\Default:index.html.twig',array());
     }
-    
-    protected function test()
-    {
-        /* $securityContext = $this->get('security.context');
-        
-        
-        $tree = $this->get('neutron.tree')
-            ->get($this->container->getParameter('neutron_admin.category.tree_name'));
-        
-        $manager = $tree->getManager();
-        
-        $node = $manager->findNodeBy(array('id' => 71));
-        
-        var_dump($securityContext->isGranted('UNDELETE', $node)); */
-        
-        $em = $this->getDoctrine()->getEntityManager();
-        $dql = $em->createQuery('SELECT t FROM NeutronAdminBundle:MainTree t');
 
-        $dql->setHint(
-            \Doctrine\ORM\Query::HINT_CUSTOM_OUTPUT_WALKER, 
-            'Neutron\\ComponentBundle\\Doctrine\\ORM\\Query\\TreeWalker\\AclWalker'
-        );
-        
-        $dql->setHint(AclWalker::HINT_ACL_OPTIONS, 
-                array('roles' => array('ROLE_BLOCK_USER'), 'mask' => MaskBuilder::MASK_VIEW));
-        
-         var_dump($dql->getArrayResult());
-        
-        
-        
-       die;
-        
-    }
 
 }

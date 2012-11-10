@@ -25,7 +25,28 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         site_url: %site_url%
-
+        
+foq_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        default:
+            client: default
+            types:
+                page:
+                    mappings:
+                        id: ~
+                        translatableLocale: ~
+                        title: { boost: 5 }
+                        content: { boost: 3 } 
+                    persistence:
+                        driver: orm 
+                        model: AppBundle\Entity\Page
+                        identifier: searchId
+                        listener:
+                            insert: false
+                            update: true
+                            delete: false
 
 # Assetic Configuration
 assetic:
@@ -62,6 +83,8 @@ doctrine:
             Neutron\Plugin\CustomerService\Model\CustomerServiceReferenceInterface: AppBundle\Entity\CustomerServiceReference 
             Neutron\Plugin\CustomerServiceBundle\Model\CustomerServiceInterface: AppBundle\Entity\CustomerService
             Neutron\Plugin\CustomerServiceBundle\Model\CustomerServiceOverviewInterface: AppBundle\Entity\CustomerServiceOverview
+            Neutron\Plugin\CustomerServiceBundle\Model\WidgetCustomerServiceInterface: AppBundle\Entity\WidgetCustomerService
+            Neutron\Plugin\CustomerServiceBundle\Model\WidgetCustomerServiceReferenceInterface: AppBundle\Entity\WidgetCustomerServiceReference
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberOverviewInterface: AppBundle\Entity\TeamMemberOverview
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberReferenceInterface: AppBundle\Entity\TeamMemberReference
             Neutron\Plugin\TeamMemberBundle\Model\TeamMemberInterface: AppBundle\Entity\TeamMember
@@ -258,7 +281,13 @@ neutron_customer_service:
     customer_service_overview_templates:
         "AppBundle:Frontend\\Plugin\\CustomerService\\Overview:standard.html.twig": "template.standard"
     customer_service_templates:
-        "AppBundle:Frontend\\Plugin\\CustomerService\\Item:standard.html.twig": "template.standard"
+        "AppBundle:Frontend\\Plugin\\CustomerService\\Item:standard.html.twig": "template.standard"     
+    widget:
+        enable: true
+        class: AppBundle\Entity\WidgetCustomerService
+        reference_class: AppBundle\Entity\WidgetCustomerServiceReference
+        templates:
+            "AppBundle:Frontend\\Plugin\\CustomerService\\Widget:frontpage.html.twig": "template.frontpage"
             
 neutron_team_member:  
     enable: true
@@ -387,6 +416,9 @@ avalanche_imagine:
         CustomerServiceImage_thumb:
             type:    thumbnail
             options: { size: [670, 321], mode: outbound, quality: 80 }
+        CustomerServiceImage_homepage_thumb:
+            type:    thumbnail
+            options: { size: [280, 124], mode: outbound, quality: 80 }
         TeamMemberImage_thumb:
             type:    thumbnail
             options: { size: [140, 105], mode: outbound, quality: 80 }

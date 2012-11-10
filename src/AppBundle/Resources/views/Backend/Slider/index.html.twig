@@ -15,6 +15,11 @@
 		<article class="panel">
 		 	<header class="divider">
 		 	    <h2>{% trans from translationDomain %}subheader{% endtrans %}</h2>
+		 	    <ul class="switcher">
+	 	            <li>
+	 	                <a href="{{ path('app.backend.home') }}" class="btn">{% trans from translationDomain %}home_management{% endtrans %}</a>
+ 	                </li>
+	 	        </ul>
 		 	</header>
 		 	<div id="messages">
 		 	    {% for flashMessage in app.session.flashbag.get('neutron.form.success') %}
@@ -22,7 +27,7 @@
 		 	    {% endfor %}	
 		 	</div>
             {{ neutron_datagrid(grid) }}
-		</article>
+        </article>
 
 	</div>
 </div>

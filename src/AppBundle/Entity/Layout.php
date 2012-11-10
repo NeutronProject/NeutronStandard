@@ -121,16 +121,9 @@ class Layout
     /**
      * @var string 
      *
-     * @ORM\Column(type="string", name="callout_box_reference_name", length=50, nullable=true, unique=false)
+     * @ORM\Column(type="string", name="callout_box_btn_url", length=255, nullable=true, unique=false)
      */
-    protected $calloutBoxReferenceName;
-    
-    /**
-     * @var integer
-     *
-     * @ORM\Column(type="integer", name="callout_box_reference_id", length=10, nullable=true, unique=false)
-     */
-    protected $calloutBoxReferenceId;
+    protected $calloutBoxBtnUrl;
     
 	public function getId ()
     {
@@ -257,24 +250,16 @@ class Layout
         $this->calloutBoxBtnText = $calloutBoxBtnText;
     }
     
-	public function getCalloutBoxReferenceName ()
+    public function setCalloutBoxBtnUrl($url)
     {
-        return $this->calloutBoxReferenceName;
+        $this->calloutBoxBtnUrl = $url;
+    }
+    
+    public function getCalloutBoxBtnUrl()
+    {
+        return $this->calloutBoxBtnUrl;
     }
 
-	public function setCalloutBoxReferenceName ($calloutBoxReferenceName)
-    {
-        $this->calloutBoxReferenceName = $calloutBoxReferenceName;
-    }
 
-	public function getCalloutBoxReferenceId ()
-    {
-        return $this->calloutBoxReferenceId;
-    }
-
-	public function setCalloutBoxReferenceId ($calloutBoxReferenceId)
-    {
-        $this->calloutBoxReferenceId = $calloutBoxReferenceId;
-    }
 
 }

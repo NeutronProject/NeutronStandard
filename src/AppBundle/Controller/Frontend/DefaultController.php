@@ -24,9 +24,15 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {  
+        $homeManager = $this->container->get('app.home_manager');
+        
+        $entity = $homeManager->getHomePage();
+        
         return $this->render(
             'AppBundle:Frontend\Default:index.html.twig',
-            array()
+            array(
+                'entity' => $entity
+            )
         );
     }
 }

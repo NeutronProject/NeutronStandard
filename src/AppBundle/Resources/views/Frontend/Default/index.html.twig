@@ -111,7 +111,11 @@
 
 {% render "app.controller.frontend.slider:indexAction" %}
 
- <section id="content-container" class="clearfix"></section>
+ <section id="content-container" class="clearfix">
+    <div id="main-wrap" class="main-wrap-slider clearfix">
+        {% render "neutron_customer_service.controller.frontend.widget_customer_service:renderAction" with {'widget': entity.widgetCustomerService} %}
+    </div>
+ </section>
 
 {% block callout_box %}{% endblock %}
       
@@ -120,7 +124,17 @@
                 <div class="footer-content clearfix">
                 
                    <div class="footer-default-one">
-                      {% block footer_text %}{% endblock %}
+                          {% if entity.layout.enableFooterText %}
+                            <div class="sidebar-widget">
+                                <div class="textwidget">
+                                    <p><img src="{{ site_url }}themes/sterling/content-images/truethemes-premium-wordpress.png"  class="footer-logo"><br>
+                                       {{ entity.layout.footerText }}
+                                    </p>
+                                 </div>
+                             <!-- END textwidget -->
+                            </div>
+                            
+                        {% endif %}
                    </div>
 
                    <div class="footer-default-two">
